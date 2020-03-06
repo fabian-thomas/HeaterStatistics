@@ -1,0 +1,12 @@
+# Visual Studio Files
+**/.vs
+
+# project build files
+**/bin
+**/obj
+**/publish
+
+# NuGet
+/packages
+
+# projects to ignore
