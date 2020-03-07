@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
+using NetworkPacketConfigToJson.Models;
 
 namespace HeaterListener
 {
@@ -14,6 +15,7 @@ namespace HeaterListener
         private static UdpClient UdpClient = new UdpClient();
         private static Config Config;
         private const string CONFIG_FILE_NAME = "config.json";
+        private const string PACKET_CONFIG_FILE_NAME = "network_packet_config.json";
 
         static void Main(string[] args)
         {
@@ -40,6 +42,16 @@ namespace HeaterListener
                 Console.WriteLine(CONFIG_FILE_NAME + " angelegt. Bitte anpassen und die Anwendung neu starten.");
                 ConsoleHelper.ExitDialog();
             }
+
+            // check package configuration file
+            if (!File.Exists(PACKET_CONFIG_FILE_NAME))
+            {
+                Console.WriteLine("Bitte " + PACKET_CONFIG_FILE_NAME + "ins Verzeichnis der Anwendung legen und Anwendung neu starten.");
+                ConsoleHelper.ExitDialog();
+            }
+
+            // read package configuration file
+            var networkPacketConfig = JsonSerializer.Deserialize<HeaterNetworkPacketModel>(File.ReadAllText(PACKET_CONFIG_FILE_NAME));
 
             // check for faulted ipaddress
             var success = IPAddress.TryParse(Config.IpAddress, out IPAddress ip);

@@ -3,9 +3,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <PublishSingleFile>true</PublishSingleFile>
+  	<PublishTrimmed>true</PublishTrimmed>
+	  <Authors>Fabian Thomas, Jonas Kaufmann</Authors>
+	  <Version>1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../NetworkPacketConfigToJson/NetworkPacketConfigToJson.csproj"/>
     <PackageReference Include="System.Text.Json" Version="4.7.1" />
   </ItemGroup>
 
