@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace NetworkPacketConfigToJson.Models
 {
-    public class HeaterNetworkPacketModel
+    public class HeaterNetworkPacketConfig
     {
-        public List<AnalogNetworkPacketModel> AnalogNetworkPacketModel { get; set; }
-        public List<DigitalNetworkPacketModel> DigitalNetworkPacketModel { get; set; }
+        public List<AnalogNetworkPacketModel> AnalogNetworkPacketConfig { get; set; }
+        public List<DigitalNetworkPacketModel> DigitalNetworkPacketConfig { get; set; }
     }
 }

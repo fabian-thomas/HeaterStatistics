@@ -165,8 +165,6 @@ namespace NetworkPacketConfigToJson
                                     }
                                     else if (toRead.StartsWith("</DIGITAL>"))
                                     {
-                                        if (currentAnalog.Id != -1)
-                                            analog.Add(currentAnalog);
                                         toRead = toRead.Substring("</DIGITAL>".Length, toRead.Length - "</DIGITAL>".Length);
                                         break;
                                     }
@@ -218,7 +216,7 @@ namespace NetworkPacketConfigToJson
                 #endregion
 
                 // write back to file
-                var json = JsonSerializer.Serialize(new HeaterNetworkPacketModel() { AnalogNetworkPacketModel = analog, DigitalNetworkPacketModel = digital }, new JsonSerializerOptions
+                var json = JsonSerializer.Serialize(new HeaterNetworkPacketConfig() { AnalogNetworkPacketConfig = analog, DigitalNetworkPacketConfig = digital }, new JsonSerializerOptions
                 {
                     WriteIndented = true,
                     Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping

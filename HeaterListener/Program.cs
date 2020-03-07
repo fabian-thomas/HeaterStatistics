@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
 using NetworkPacketConfigToJson.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Buffers.Binary;
+using System.Collections;
+using System.Text.Encodings.Web;
 
 namespace HeaterListener
 {
@@ -14,8 +19,10 @@ namespace HeaterListener
     {
         private static UdpClient UdpClient = new UdpClient();
         private static Config Config;
+        private static HeaterNetworkPacketConfig NetworkPacketConfig;
         private const string CONFIG_FILE_NAME = "config.json";
         private const string PACKET_CONFIG_FILE_NAME = "network_packet_config.json";
+        private const string DATA_FILE_NAME = "data.json";
 
         static void Main(string[] args)
         {
@@ -51,7 +58,17 @@ namespace HeaterListener
             }
 
             // read package configuration file
-            var networkPacketConfig = JsonSerializer.Deserialize<HeaterNetworkPacketModel>(File.ReadAllText(PACKET_CONFIG_FILE_NAME));
+            try
+            {
+                NetworkPacketConfig = JsonSerializer.Deserialize<HeaterNetworkPacketConfig>(File.ReadAllText(PACKET_CONFIG_FILE_NAME));
+            }
+            catch (JsonException e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e);
+                Console.WriteLine(PACKET_CONFIG_FILE_NAME + " lässt sich nicht einlesen. Bitte prüfen Sie die Datei und starten die Anwendung neu.");
+                ConsoleHelper.ExitDialog();
+            }
 
             // check for faulted ipaddress
             var success = IPAddress.TryParse(Config.IpAddress, out IPAddress ip);
@@ -76,24 +93,36 @@ namespace HeaterListener
                 ConsoleHelper.ExitDialog();
             }
 
+
+            Console.WriteLine("Paket-Empfang gestartet...");
             Task.Run(() =>
             {
+                string previousInput = "";
                 while (true)
                 {
                     // var receiveBuffer = UdpClient.Receive(ref from);
                     // Console.WriteLine("received: " + Encoding.UTF8.GetString(receiveBuffer));
-                    try
+                    // try
+                    // {
+                    var bytes = UdpClient.Receive(ref sender);
+                    string message = Encoding.UTF8.GetString(bytes);
+                    Console.WriteLine("Received: " + message);
+
+                    if (message != previousInput)
                     {
-                        var bytes = UdpClient.Receive(ref sender);
-                        string message = Encoding.UTF8.GetString(bytes);
+                        previousInput = message;
+                        ProcessData(message);
+                        Console.WriteLine("Processed");
                     }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine($"Folgender Fehler ist beim Lesen ankommender Pakete von {Config.IpAddress} aufgetreten:");
-                        Console.WriteLine(e);
-                        Console.WriteLine();
-                    }
+
+                    // }
+                    // catch (Exception e)
+                    // {
+                    //     Console.WriteLine();
+                    //     Console.WriteLine($"Folgender Fehler ist beim Lesen ankommender Pakete von {Config.IpAddress} aufgetreten:");
+                    //     Console.WriteLine(e);
+                    //     Console.WriteLine();
+                    // }
                 }
             });
 
@@ -106,9 +135,84 @@ namespace HeaterListener
             }
         }
 
-        private static void ProcessData(string data)
+        private static void ProcessData(string input)
         {
-            Console.WriteLine("Received: {0}", data);
+            if (input.StartsWith("pm "))
+            {
+                var data = new List<CapturedDataModel>();
+
+                input = input.Substring("pm ".Length, input.Length - "pm ".Length);
+                var split = input.Split(" ");
+
+                // read analog values
+                int i = 0;
+                while (i < NetworkPacketConfig.AnalogNetworkPacketConfig.Count)
+                {
+                    var c = new CapturedDataModel() { Id = i };
+                    var filtered = NetworkPacketConfig.AnalogNetworkPacketConfig.Where(p => p.Id == i);
+                    if (filtered.Count() == 0)
+                    {
+                        Console.WriteLine($"Paket-Konfiguration ungültig. Id {i} konnte nicht in den Konfiguration gefunden werden: " + input);
+                        ConsoleHelper.ExitDialog();
+                    }
+
+                    var config = filtered.First();
+                    c.Name = config.Name;
+                    c.Unit = config.Unit;
+                    double v;
+                    if (double.TryParse(split[i].Replace(".", ","), out v))
+                        c.Value = v;
+                    else
+                    {
+                        Console.WriteLine("Paket ungültig. Double erwartet jedoch anderen Wert empfangen: " + input);
+                        ConsoleHelper.ExitDialog();
+                    }
+                    data.Add(c);
+
+                    i++;
+                }
+
+                // read digital values
+                while (i < NetworkPacketConfig.DigitalNetworkPacketConfig.Count + NetworkPacketConfig.AnalogNetworkPacketConfig.Count)
+                {
+                    var currentId = i - NetworkPacketConfig.AnalogNetworkPacketConfig.Count;
+                    var filtered = NetworkPacketConfig.DigitalNetworkPacketConfig.Where(p => p.Id == currentId);
+                    if (filtered.Count() == 0)
+                    {
+                        Console.WriteLine($"Paket-Konfiguration ungültig. Id {currentId} konnte nicht in den Konfiguration gefunden werden: " + input);
+                        ConsoleHelper.ExitDialog();
+                    }
+                    var config = filtered.First();
+
+                    // go through bits
+                    short o;
+                    if (short.TryParse(split[i], out o))
+                    {
+                        int[] bits = Convert.ToString(o, 2).PadLeft(config.Bits.Last().Bit + 1, '0')
+                                     .Select(c => int.Parse(c.ToString()))
+                                     .ToArray();
+
+                        for (int b = 0; b < config.Bits.Count; b++)
+                            data.Add(new CapturedDataModel() { Id = i + config.Id, Value = bits[config.Bits[b].Bit], Name = config.Bits[b].Name, Unit = "bool" });
+                    }
+                    else
+                    {
+                        Console.WriteLine("Paket ungültig. Short erwartet jedoch anderen Wert empfangen: " + input);
+                        ConsoleHelper.ExitDialog();
+                    }
+
+                    i++;
+                }
+
+                File.WriteAllText(DATA_FILE_NAME, JsonSerializer.Serialize(data, new JsonSerializerOptions()
+                {
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                }));
+            }
+            else Console.WriteLine("Ungültiges Paket empfangen: " + input);
+
+
         }
 
         private static void SendTestBroadcasts(int port)
@@ -120,8 +224,9 @@ namespace HeaterListener
             {
                 while (true)
                 {
-                    new UdpClient().Send(data, data.Length, "255.255.255.255", port);
-                    Thread.Sleep(300);
+                    // new UdpClient().Send(data, data.Length, "255.255.255.255", port);
+                    new UdpClient().Send(data, data.Length, "192.168.178.58", port);
+                    Thread.Sleep(1500);
                 }
             });
         }
