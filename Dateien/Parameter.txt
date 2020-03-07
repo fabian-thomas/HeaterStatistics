@@ -1,6 +1,7 @@
 <ANALOG>
 id='0'   name='TK' 			unit='�C'
 id='1'   name='TRG' 		unit='�C'
+id='0'   name='Test' 			unit='Test'
 id='2'   name='O2' 			unit='%'
 id='3'   name='TPo' 		unit='�C'
 id='4'   name='TPm' 		unit='�C'
