@@ -33,51 +33,102 @@ private const string OUTPUT_FILE_NAME = "parameterConfig.json";
                 var analog = false;
                 var currentParameterConfig = new ParameterConfig();
 
-                foreach(var s in split){
-                    Console.WriteLine(s);
-                    if(s != " " && s!= "")
-                    {
-                        if(!digital) {
-                            if( s == "<DIGITAL>") digital= true;
-                            else throw new NotImplementedException();
+
+                // read Analog Config
+                var analogConfig = new List<AnalogConfig>();
+                var i = 0;
+                var startedReading = false;
+                var currentAnalogConfig = new AnalogConfig() {Id = -1};
+                try{
+                    while(true) {
+                        if(i>=split.Length){
+                            throw new ReadParameterException("no ending </ANALOG> tag found");
                         } else {
-                            if(s=="</DIGITAL>")
-                                break;
-                            else {
-                                if(s.StartsWith("id=")) {
-                                    currentParameterConfig = new ParameterConfig();
-                                    currentParameterConfig.Id = int.Parse(s.Substring(("id=").Length, s.Length-("id=").Length).Replace("'", ""));
-                                } else if(!analog && digitalComplete) {
-                                    if(s == "<ANALOG>") analog = true;
-                                    else throw new NotImplementedException();
+                            var input = split[i];
+                            if(input != " " && input!= "")
+                            {
+                                if(startedReading) {
+                                    if(input.StartsWith("id=")) {
+                                        int id;
+                                        var u = input.Substring(("id=").Length, input.Length-("id=").Length).Replace("'", "");
+                                        if(int.TryParse(input.Substring(("id=").Length, input.Length-("id=").Length).Replace("'", ""), out id))
+                                        {
+                                            if(currentAnalogConfig.Id != -1)
+                                                analogConfig.Add(currentAnalogConfig);
+                                            currentAnalogConfig = new AnalogConfig();
+                                            currentAnalogConfig.Id = id;
+                                        }
+                                        else throw new ReadParameterException($"Id has to be integer ({input})");
+                                    } else if(input.StartsWith("name="))
+                                            currentAnalogConfig.Name = input.Substring("name=".Length, input.Length-"name=".Length);
+                                        else if(input.StartsWith("unit="))
+                                            currentAnalogConfig.Unit = input.Substring("unit=".Length, input.Length-"unit=".Length);
+                                        else if(input == "</ANALOG>") {
+                                            if(currentAnalogConfig.Id != -1)
+                                                analogConfig.Add(currentAnalogConfig);
+                                            i++;
+                                            break;
+                                        } else throw new ReadParameterException($"unexcepted string: {input}");
+                                } else if(input == "<ANALOG>") {
+                                    startedReading = true;
                                 }
                             }
-                            if(s.StartsWith("id=")) {
-                                currentParameterConfig = new ParameterConfig();
-                                currentParameterConfig.Id = int.Parse(s.Substring(("id=").Length, s.Length-("id=").Length).Replace("'", ""));
-                            } else if(!analog && digitalComplete) {
-                                if(s == "<ANALOG>") analog = true;
-                                else throw new NotImplementedException();
-                            } else if(analog) {
-                                if(s.StartsWith("name=")) {
-                                    currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
-                                    parameterList.Add(currentParameterConfig);
-                                } else if(s.StartsWith("bit=")){
-                                    currentParameterConfig.Bit = int.Parse(s.Substring("bit=".Length, s.Length-"bit=".Length));
-                                } else if (s == "</ANALOG>")
-                                    break;
-                                else throw new NotImplementedException();
-                            } else if(digital){
-                                if(s.StartsWith("name=")) {
-                                    currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
-                                } else if(s.StartsWith("unit=")){
-                                    currentParameterConfig.Unit = s.Substring("unit=".Length, s.Length-"unit=".Length);
-                                    parameterList.Add(currentParameterConfig);
-                                } else if (s == "</DIGITAL>")
-                                    digitalComplete = false;
-                                else throw new NotImplementedException();
-                            }
+                            i++;
                         }
+                    }
+                } catch(ReadParameterException e) {
+                    Console.WriteLine("Fehler bei der Konvertierung:\n" + e);
+                }
+
+                // analogConfig.Sort()
+                // analogConfig
+
+var idsf = 0;
+                // foreach(var s in split){
+                //     Console.WriteLine(s);
+                //     if(s != " " && s!= "")
+                //     {
+                //         if(!digital) {
+                //             if( s == "<DIGITAL>") digital= true;
+                //             else throw new NotImplementedException();
+                //         } else {
+                //             if(s=="</DIGITAL>")
+                //                 break;
+                //             else {
+                //                 if(s.StartsWith("id=")) {
+                //                     currentParameterConfig = new ParameterConfig();
+                //                     currentParameterConfig.Id = int.Parse(s.Substring(("id=").Length, s.Length-("id=").Length).Replace("'", ""));
+                //                 } else if(!analog && digitalComplete) {
+                //                     if(s == "<ANALOG>") analog = true;
+                //                     else throw new NotImplementedException();
+                //                 }
+                //             }
+                //             if(s.StartsWith("id=")) {
+                //                 currentParameterConfig = new ParameterConfig();
+                //                 currentParameterConfig.Id = int.Parse(s.Substring(("id=").Length, s.Length-("id=").Length).Replace("'", ""));
+                //             } else if(!analog && digitalComplete) {
+                //                 if(s == "<ANALOG>") analog = true;
+                //                 else throw new NotImplementedException();
+                //             } else if(analog) {
+                //                 if(s.StartsWith("name=")) {
+                //                     currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
+                //                     parameterList.Add(currentParameterConfig);
+                //                 } else if(s.StartsWith("bit=")){
+                //                     currentParameterConfig.Bit = int.Parse(s.Substring("bit=".Length, s.Length-"bit=".Length));
+                //                 } else if (s == "</ANALOG>")
+                //                     break;
+                //                 else throw new NotImplementedException();
+                //             } else if(digital){
+                //                 if(s.StartsWith("name=")) {
+                //                     currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
+                //                 } else if(s.StartsWith("unit=")){
+                //                     currentParameterConfig.Unit = s.Substring("unit=".Length, s.Length-"unit=".Length);
+                //                     parameterList.Add(currentParameterConfig);
+                //                 } else if (s == "</DIGITAL>")
+                //                     digitalComplete = false;
+                //                 else throw new NotImplementedException();
+                //             }
+                //         }
                         // if(!digital) {
                         //     if( s == "<DIGITAL>") digital= true;
                         //     else throw new NotImplementedException();
@@ -108,8 +159,6 @@ private const string OUTPUT_FILE_NAME = "parameterConfig.json";
                         //         else throw new NotImplementedException();
                         //     }
                         // }
-                    }
-                }
                 // parameterList.Add(new ParameterConfig() {Id = 0, Name="Test", Unit="unit"});
                 //  parameterList.Add(new ParameterConfig() {Id = 1, Name="Test1", Unit="unit2"});
                 //   parameterList.Add(new ParameterConfig() {Id = 2, Name="Test2", Unit="unit3"});
