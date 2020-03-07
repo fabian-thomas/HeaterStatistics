@@ -2,10 +2,8 @@ using System.Collections.Generic;
 
 namespace PackageFormatConverter
 {
-    public class DigitalConfig
+    public class DigitalNetworkPacketModel : NetworkPacketModel
     {
-        public int Id { get; set; }
-        public string Name {get; set;}
-        public List<BitConfig> Bits {get; set;}
+        public List<BitModel> Bits { get; set; }
     }
 }

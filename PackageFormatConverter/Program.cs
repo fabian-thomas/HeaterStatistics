@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace PackageFormatConverter
 {
     class Program
     {
-private const string OUTPUT_FILE_NAME = "parameterConfig.json";
+        private const string OUTPUT_FILE_NAME = "parameterConfig.json";
 
         static void Main(string[] args)
         {
@@ -23,67 +24,81 @@ private const string OUTPUT_FILE_NAME = "parameterConfig.json";
             if (File.Exists(path))
             {
                 var text = File.ReadAllText(path);
-               text = text.Replace("\n", " ");
-                 text = text.Replace("\r", " ");
-                 text = text.Replace("\t", " ");
+                text = text.Replace("\n", " ");
+                text = text.Replace("\r", " ");
+                text = text.Replace("\t", " ");
                 var split = text.Split(" ");
-                var parameterList = new List<ParameterConfig>();
+                var parameterList = new List<AnalogNetworkPacketModel>();
                 var digital = false;
                 var digitalComplete = false;
                 var analog = false;
-                var currentParameterConfig = new ParameterConfig();
+                var currentParameterConfig = new AnalogNetworkPacketModel();
 
 
                 // read Analog Config
-                var analogConfig = new List<AnalogConfig>();
+                var analogConfig = new List<AnalogNetworkPacketModel>();
                 var i = 0;
                 var startedReading = false;
-                var currentAnalogConfig = new AnalogConfig() {Id = -1};
-                try{
-                    while(true) {
-                        if(i>=split.Length){
+                var currentAnalogConfig = new AnalogNetworkPacketModel() { Id = -1 };
+                try
+                {
+                    while (true)
+                    {
+                        if (i >= split.Length)
+                        {
                             throw new ReadParameterException("no ending </ANALOG> tag found");
-                        } else {
+                        }
+                        else
+                        {
                             var input = split[i];
-                            if(input != " " && input!= "")
+                            if (input != " " && input != "")
                             {
-                                if(startedReading) {
-                                    if(input.StartsWith("id=")) {
+                                if (startedReading)
+                                {
+                                    if (input.StartsWith("id="))
+                                    {
                                         int id;
-                                        var u = input.Substring(("id=").Length, input.Length-("id=").Length).Replace("'", "");
-                                        if(int.TryParse(input.Substring(("id=").Length, input.Length-("id=").Length).Replace("'", ""), out id))
+                                        var u = input.Substring(("id=").Length, input.Length - ("id=").Length).Replace("'", "");
+                                        if (int.TryParse(input.Substring(("id=").Length, input.Length - ("id=").Length).Replace("'", ""), out id))
                                         {
-                                            if(currentAnalogConfig.Id != -1)
+                                            if (currentAnalogConfig.Id != -1)
                                                 analogConfig.Add(currentAnalogConfig);
-                                            currentAnalogConfig = new AnalogConfig();
+                                            currentAnalogConfig = new AnalogNetworkPacketModel();
                                             currentAnalogConfig.Id = id;
                                         }
                                         else throw new ReadParameterException($"Id has to be integer ({input})");
-                                    } else if(input.StartsWith("name="))
-                                            currentAnalogConfig.Name = input.Substring("name=".Length, input.Length-"name=".Length);
-                                        else if(input.StartsWith("unit="))
-                                            currentAnalogConfig.Unit = input.Substring("unit=".Length, input.Length-"unit=".Length);
-                                        else if(input == "</ANALOG>") {
-                                            if(currentAnalogConfig.Id != -1)
-                                                analogConfig.Add(currentAnalogConfig);
-                                            i++;
-                                            break;
-                                        } else throw new ReadParameterException($"unexcepted string: {input}");
-                                } else if(input == "<ANALOG>") {
+                                    }
+                                    else if (input.StartsWith("name="))
+                                        currentAnalogConfig.Name = input.Substring("name=".Length, input.Length - "name=".Length);
+                                    else if (input.StartsWith("unit="))
+                                        currentAnalogConfig.Unit = input.Substring("unit=".Length, input.Length - "unit=".Length);
+                                    else if (input == "</ANALOG>")
+                                    {
+                                        if (currentAnalogConfig.Id != -1)
+                                            analogConfig.Add(currentAnalogConfig);
+                                        i++;
+                                        break;
+                                    }
+                                    else throw new ReadParameterException($"unexcepted string: {input}");
+                                }
+                                else if (input == "<ANALOG>")
+                                {
                                     startedReading = true;
                                 }
                             }
                             i++;
                         }
                     }
-                } catch(ReadParameterException e) {
+                }
+                catch (ReadParameterException e)
+                {
                     Console.WriteLine("Fehler bei der Konvertierung:\n" + e);
                 }
 
-                // analogConfig.Sort()
+                analogConfig.Sort(new IdComparer());
                 // analogConfig
 
-var idsf = 0;
+                var idsf = 0;
                 // foreach(var s in split){
                 //     Console.WriteLine(s);
                 //     if(s != " " && s!= "")
@@ -129,36 +144,36 @@ var idsf = 0;
                 //                 else throw new NotImplementedException();
                 //             }
                 //         }
-                        // if(!digital) {
-                        //     if( s == "<DIGITAL>") digital= true;
-                        //     else throw new NotImplementedException();
-                        // } else {
-                        //     if(s.StartsWith("id=")) {
-                        //         currentParameterConfig = new ParameterConfig();
-                        //         currentParameterConfig.Id = int.Parse(s.Substring(("id=").Length, s.Length-("id=").Length).Replace("'", ""));
-                        //     } else if(!analog && digitalComplete) {
-                        //         if(s == "<ANALOG>") analog = true;
-                        //         else throw new NotImplementedException();
-                        //     } else if(analog) {
-                        //         if(s.StartsWith("name=")) {
-                        //             currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
-                        //             parameterList.Add(currentParameterConfig);
-                        //         } else if(s.StartsWith("bit=")){
-                        //             currentParameterConfig.Bit = int.Parse(s.Substring("bit=".Length, s.Length-"bit=".Length));
-                        //         } else if (s == "</ANALOG>")
-                        //             break;
-                        //         else throw new NotImplementedException();
-                        //     } else if(digital){
-                        //         if(s.StartsWith("name=")) {
-                        //             currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
-                        //         } else if(s.StartsWith("unit=")){
-                        //             currentParameterConfig.Unit = s.Substring("unit=".Length, s.Length-"unit=".Length);
-                        //             parameterList.Add(currentParameterConfig);
-                        //         } else if (s == "</DIGITAL>")
-                        //             digitalComplete = false;
-                        //         else throw new NotImplementedException();
-                        //     }
-                        // }
+                // if(!digital) {
+                //     if( s == "<DIGITAL>") digital= true;
+                //     else throw new NotImplementedException();
+                // } else {
+                //     if(s.StartsWith("id=")) {
+                //         currentParameterConfig = new ParameterConfig();
+                //         currentParameterConfig.Id = int.Parse(s.Substring(("id=").Length, s.Length-("id=").Length).Replace("'", ""));
+                //     } else if(!analog && digitalComplete) {
+                //         if(s == "<ANALOG>") analog = true;
+                //         else throw new NotImplementedException();
+                //     } else if(analog) {
+                //         if(s.StartsWith("name=")) {
+                //             currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
+                //             parameterList.Add(currentParameterConfig);
+                //         } else if(s.StartsWith("bit=")){
+                //             currentParameterConfig.Bit = int.Parse(s.Substring("bit=".Length, s.Length-"bit=".Length));
+                //         } else if (s == "</ANALOG>")
+                //             break;
+                //         else throw new NotImplementedException();
+                //     } else if(digital){
+                //         if(s.StartsWith("name=")) {
+                //             currentParameterConfig.Name = s.Substring("name=".Length, s.Length-"name=".Length);
+                //         } else if(s.StartsWith("unit=")){
+                //             currentParameterConfig.Unit = s.Substring("unit=".Length, s.Length-"unit=".Length);
+                //             parameterList.Add(currentParameterConfig);
+                //         } else if (s == "</DIGITAL>")
+                //             digitalComplete = false;
+                //         else throw new NotImplementedException();
+                //     }
+                // }
                 // parameterList.Add(new ParameterConfig() {Id = 0, Name="Test", Unit="unit"});
                 //  parameterList.Add(new ParameterConfig() {Id = 1, Name="Test1", Unit="unit2"});
                 //   parameterList.Add(new ParameterConfig() {Id = 2, Name="Test2", Unit="unit3"});
@@ -176,10 +191,45 @@ var idsf = 0;
                 // }
             }
             else
-            Console.WriteLine("Datei nicht vorhanden");
+                Console.WriteLine("Datei nicht vorhanden");
 
-Console.WriteLine("Beliebige Taste drücken um Anwendung zu beenden");
+            Console.WriteLine("Beliebige Taste drücken um Anwendung zu beenden");
             Console.ReadKey();
+        }
+
+
+    }
+
+    class AnalogIdComparer : Comparer<AnalogNetworkPacketModel>
+    {
+        public override int Compare(AnalogNetworkPacketModel x, AnalogNetworkPacketModel y)
+        {
+            return x.Id.CompareTo(y.Id);
+        }
+    }
+
+    class IdComparer : Comparer<NetworkPacketModel>
+    {
+        public override int Compare(NetworkPacketModel x, NetworkPacketModel y)
+        {
+            return x.Id.CompareTo(y.Id);
+        }
+    }
+
+    class ReadParameterException : Exception
+    {
+        public ReadParameterException()
+        {
+        }
+
+        public ReadParameterException(string message)
+            : base(message)
+        {
+        }
+
+        public ReadParameterException(string message, Exception inner)
+            : base(message, inner)
+        {
         }
     }
 }
