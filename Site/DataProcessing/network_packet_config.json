@@ -1,0 +1,72 @@
+[
+  {
+    "$type": "NetworkPacketConfigToJson.Models.AnalogNetworkPacketModel, NetworkPacketConfigToJson",
+    "Name": "TK",
+    "Unit": "°C",
+    "Id": 0
+  },
+  {
+    "$type": "NetworkPacketConfigToJson.Models.AnalogNetworkPacketModel, NetworkPacketConfigToJson",
+    "Name": "TRG",
+    "Unit": "°C",
+    "Id": 1
+  },
+  {
+    "$type": "NetworkPacketConfigToJson.Models.DigitalNetworkPacketModel, NetworkPacketConfigToJson",
+    "Bits": [
+      {
+        "Bit": 1,
+        "Name": "HKP1"
+      },
+      {
+        "Bit": 2,
+        "Name": "HKP2"
+      },
+      {
+        "Bit": 3,
+        "Name": "M1A"
+      },
+      {
+        "Bit": 4,
+        "Name": "M1Z"
+      },
+      {
+        "Bit": 5,
+        "Name": "M2A"
+      },
+      {
+        "Bit": 6,
+        "Name": "M2Z"
+      },
+      {
+        "Bit": 7,
+        "Name": "Boilanf.1"
+      },
+      {
+        "Bit": 8,
+        "Name": "Lamdaheiz."
+      },
+      {
+        "Bit": 10,
+        "Name": "Zündheiz."
+      },
+      {
+        "Bit": 11,
+        "Name": "SLK_auf"
+      },
+      {
+        "Bit": 12,
+        "Name": "SLK_zu"
+      },
+      {
+        "Bit": 13,
+        "Name": "PLK_auf"
+      },
+      {
+        "Bit": 14,
+        "Name": "PLK_zu"
+      }
+    ],
+    "Id": 156
+  }
+]

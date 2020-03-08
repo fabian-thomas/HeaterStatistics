@@ -1,5 +1,17 @@
 [
   {
+    "Id": 0,
+    "Name": "TK",
+    "Unit": "°C",
+    "Value": 38.0
+  },
+  {
+    "Id": 1,
+    "Name": "TRG",
+    "Unit": "°C",
+    "Value": 190.9
+  },
+  {
     "Id": 2,
     "Name": "O2",
     "Unit": "%",

@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 0,
+    "Name": "TK",
+    "Unit": "°C",
+    "Value": 0.0
+  },
+  {
+    "Id": 1,
+    "Name": "TRG",
+    "Unit": "°C",
+    "Value": 190.9
+  },
+  {
+    "Id": 156,
+    "Name": "HKP1",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "HKP2",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 156,
+    "Name": "M1A",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 156,
+    "Name": "M1Z",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "M2A",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "M2Z",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "Boilanf.1",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 156,
+    "Name": "Lamdaheiz.",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 156,
+    "Name": "Zündheiz.",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 156,
+    "Name": "SLK_auf",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "SLK_zu",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "PLK_auf",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 156,
+    "Name": "PLK_zu",
+    "Unit": "bool",
+    "Value": 1.0
+  }
+]

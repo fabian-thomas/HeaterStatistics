@@ -1,7 +1,7 @@
 var main_div = document.getElementById("main_div");
 
 var request = new XMLHttpRequest();
-request.open("GET", "../data.json");
+request.open("GET", "../DataProcessing/data.json");
 request.addEventListener("load", function(event) {
 	if (request.status >= 200 && request.status < 300) {
 		data = JSON.parse(request.responseText);

@@ -8,16 +8,15 @@ using System.IO;
 using NetworkPacketConfigToJson.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Buffers.Binary;
-using System.Collections;
 using Newtonsoft.Json;
+using HeaterListener.Models;
 
 namespace HeaterListener
 {
     class Program
     {
         private static UdpClient UdpClient = new UdpClient();
-        private static Config Config;
+        private static ConfigModel Config;
         private static List<NetworkPacketModel> NetworkPacketConfig;
         private const string CONFIG_FILE_NAME = "config.json";
         private const string PACKET_CONFIG_FILE_NAME = "network_packet_config.json";
@@ -29,7 +28,7 @@ namespace HeaterListener
             {
                 try
                 {
-                    Config = JsonConvert.DeserializeObject<Config>(File.ReadAllText(CONFIG_FILE_NAME));
+                    Config = JsonConvert.DeserializeObject<ConfigModel>(File.ReadAllText(CONFIG_FILE_NAME));
                 }
                 catch (Exception e)
                 {
@@ -39,7 +38,7 @@ namespace HeaterListener
             else
             {
                 var input = ConsoleHelper.AskUserForIPAndPort();
-                Config = new Config { IpAddress = input.Item1.ToString(), Port = input.Item2 };
+                Config = new ConfigModel { IpAddress = input.Item1.ToString(), Port = input.Item2 };
 
                 File.WriteAllText(CONFIG_FILE_NAME, JsonConvert.SerializeObject(Config, Formatting.Indented));
                 Console.WriteLine(CONFIG_FILE_NAME + " angelegt. Bitte anpassen und die Anwendung neu starten.");
@@ -96,8 +95,6 @@ namespace HeaterListener
                 string previousInput = "";
                 while (true)
                 {
-                    // var receiveBuffer = UdpClient.Receive(ref from);
-                    // Console.WriteLine("received: " + Encoding.UTF8.GetString(receiveBuffer));
                     try
                     {
                         var bytes = UdpClient.Receive(ref sender);
@@ -122,13 +119,14 @@ namespace HeaterListener
                 }
             });
 
-            SendTestPackets(Config.Port);
+            if (GetLocalIPAddress() == Config.IpAddress)
+                SendTestPackets(Config.Port);
 
             // keep app running
-            // while (true)
-            // {
-            Console.ReadKey();
-            // }
+            while (true)
+            {
+                Console.ReadKey();
+            }
         }
 
         private static void ProcessData(string input)
@@ -184,71 +182,9 @@ namespace HeaterListener
                     }
                 }
 
-                // read analog values
-                // int i = 0;
-                // while (i < NetworkPacketConfig.AnalogNetworkPacketConfig.Count)
-                // {
-                //     var c = new CapturedDataModel() { Id = i };
-                //     var filtered = NetworkPacketConfig.AnalogNetworkPacketConfig.Where(p => p.Id == i);
-                //     if (filtered.Count() == 0)
-                //     {
-                //         Console.WriteLine($"Paket-Konfiguration ungültig. Id {i} konnte nicht in den Konfiguration gefunden werden: " + input);
-                //         ConsoleHelper.ExitDialog();
-                //     }
-
-                //     var config = filtered.First();
-                //     c.Name = config.Name;
-                //     c.Unit = config.Unit;
-                //     double v;
-                //     if (double.TryParse(split[i].Replace(".", ","), out v))
-                //         c.Value = v;
-                //     else
-                //     {
-                //         Console.WriteLine("Paket ungültig. Double erwartet jedoch anderen Wert empfangen: " + input);
-                //         ConsoleHelper.ExitDialog();
-                //     }
-                //     data.Add(c);
-
-                //     i++;
-                // }
-
-                // // read digital values
-                // while (i < NetworkPacketConfig.DigitalNetworkPacketConfig.Count + NetworkPacketConfig.AnalogNetworkPacketConfig.Count)
-                // {
-                //     var currentId = i - NetworkPacketConfig.AnalogNetworkPacketConfig.Count;
-                //     var filtered = NetworkPacketConfig.DigitalNetworkPacketConfig.Where(p => p.Id == currentId);
-                //     if (filtered.Count() == 0)
-                //     {
-                //         Console.WriteLine($"Paket-Konfiguration ungültig. Id {currentId} konnte nicht in den Konfiguration gefunden werden: " + input);
-                //         ConsoleHelper.ExitDialog();
-                //     }
-                //     var config = filtered.First();
-
-                //     // go through bits
-                //     short o;
-                //     if (short.TryParse(split[i], out o))
-                //     {
-                //         int[] bits = Convert.ToString(o, 2).PadLeft(config.Bits.Last().Bit + 1, '0')
-                //                      .Select(c => int.Parse(c.ToString()))
-                //                      .ToArray();
-
-                //         for (int b = 0; b < config.Bits.Count; b++)
-                //             data.Add(new CapturedDataModel() { Id = i + config.Id, Value = bits[config.Bits[b].Bit], Name = config.Bits[b].Name, Unit = "bool" });
-                //     }
-                //     else
-                //     {
-                //         Console.WriteLine("Paket ungültig. Short erwartet jedoch anderen Wert empfangen: " + input);
-                //         ConsoleHelper.ExitDialog();
-                //     }
-
-                //     i++;
-                // }
-
                 File.WriteAllText(DATA_FILE_NAME, JsonConvert.SerializeObject(data, Formatting.Indented));
             }
             else Console.WriteLine("Ungültiges Paket empfangen: " + input);
-
-
         }
 
         private static void SendTestPackets(int port)

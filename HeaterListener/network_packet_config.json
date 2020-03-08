@@ -1,6 +1,18 @@
 [
   {
     "$type": "NetworkPacketConfigToJson.Models.AnalogNetworkPacketModel, NetworkPacketConfigToJson",
+    "Name": "TK",
+    "Unit": "°C",
+    "Id": 0
+  },
+  {
+    "$type": "NetworkPacketConfigToJson.Models.AnalogNetworkPacketModel, NetworkPacketConfigToJson",
+    "Name": "TRG",
+    "Unit": "°C",
+    "Id": 1
+  },
+  {
+    "$type": "NetworkPacketConfigToJson.Models.AnalogNetworkPacketModel, NetworkPacketConfigToJson",
     "Name": "O2",
     "Unit": "%",
     "Id": 2
