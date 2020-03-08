@@ -66,33 +66,30 @@ namespace HeaterListener
             }
 
             // check for faulted ipaddress
-            var success = IPAddress.TryParse(Config.IpAddress, out IPAddress ip);
-
-            if (!success)
+            if (!IPAddress.TryParse(Config.IpAddress, out IPAddress ip))
             {
                 Console.WriteLine($"Format der IP-Adresse in {CONFIG_FILE_NAME} falsch. Bitte anpassen und neustarten");
                 ConsoleHelper.ExitDialog();
             }
-            var sender = new IPEndPoint(ip, Config.Port);
 
-            // try to register listener
+            // try to register for the port
             try
             {
-                UdpClient.Client.Bind(sender);
+                UdpClient = new UdpClient(Config.Port);
             }
             catch (Exception e)
             {
                 Console.WriteLine();
                 Console.WriteLine(e);
-                Console.WriteLine("Fehler beim Registrieren des Listeners. Bitte IP und Port in der Config überprüfen.");
+                Console.WriteLine("Fehler beim Registrieren des Listeners. Eine andere Anwendung hört bereits auf Port {0}.", Config.Port);
                 ConsoleHelper.ExitDialog();
             }
-
 
             Console.WriteLine("Paket-Empfang gestartet...");
             Task.Run(() =>
             {
                 string previousInput = "";
+                var sender = new IPEndPoint(ip, Config.Port);
                 while (true)
                 {
                     try
