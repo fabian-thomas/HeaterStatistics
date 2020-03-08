@@ -1,5 +1,6 @@
 # Visual Studio Files
 **/.vs
+**/.vscode
 
 # project build files
 **/bin
@@ -12,3 +13,4 @@
 # projects to ignore
 Site/WebServer/AppData/Roaming/*
 !Site/WebServer/AppData/Roaming/Fenix
+fenixsetup.exe
