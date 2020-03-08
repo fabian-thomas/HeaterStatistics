@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetworkPacketConfigToJson\NetworkPacketConfigToJson.csproj"/>
+    <ProjectReference Include="..\NetworkPacketConfigToJson\NetworkPacketConfigToJson.csproj" Properties="PublishSingleFile=false"/>
     <PackageReference Include="System.Text.Json" Version="4.7.1" />
   </ItemGroup>
 

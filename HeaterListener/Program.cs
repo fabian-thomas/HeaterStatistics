@@ -102,37 +102,37 @@ namespace HeaterListener
                 {
                     // var receiveBuffer = UdpClient.Receive(ref from);
                     // Console.WriteLine("received: " + Encoding.UTF8.GetString(receiveBuffer));
-                    // try
-                    // {
-                    var bytes = UdpClient.Receive(ref sender);
-                    string message = Encoding.UTF8.GetString(bytes);
-                    Console.WriteLine("Received: " + message);
-
-                    if (message != previousInput)
+                    try
                     {
-                        previousInput = message;
-                        ProcessData(message);
-                        Console.WriteLine("Processed");
-                    }
+                        var bytes = UdpClient.Receive(ref sender);
+                        string message = Encoding.UTF8.GetString(bytes);
+                        Console.WriteLine("Received: " + message);
 
-                    // }
-                    // catch (Exception e)
-                    // {
-                    //     Console.WriteLine();
-                    //     Console.WriteLine($"Folgender Fehler ist beim Lesen ankommender Pakete von {Config.IpAddress} aufgetreten:");
-                    //     Console.WriteLine(e);
-                    //     Console.WriteLine();
-                    // }
+                        if (message != previousInput)
+                        {
+                            previousInput = message;
+                            ProcessData(message);
+                            Console.WriteLine("Processed");
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Folgender Fehler ist beim Lesen ankommender Pakete von {Config.IpAddress} aufgetreten:");
+                        Console.WriteLine(e);
+                        Console.WriteLine();
+                    }
                 }
             });
 
-            SendTestBroadcasts(Config.Port);
+            SendTestPackets(Config.Port);
 
             // keep app running
-            while (true)
-            {
-                Console.ReadKey();
-            }
+            // while (true)
+            // {
+            Console.ReadKey();
+            // }
         }
 
         private static void ProcessData(string input)
@@ -215,22 +215,29 @@ namespace HeaterListener
 
         }
 
-        private static void SendTestBroadcasts(int port)
+        private static void SendTestPackets(int port)
         {
-            // var data = Encoding.UTF8.GetBytes("Test Network Broadcast");
-            // var data = Encoding.UTF8.GetBytes($"pm {DateTime.Now.Minute} 190.9 6.0 72.6 70.5 37.5 6.6 53.6 120.0 20.0 20.0 64.0 53.0 0.0 23.5 20.0 15 14 14 14 71.5 100 6 6.0 21.0 190.0 0.0 79.0 -20.0 -20.0 20.0 20.0 -20.0 0.0 0.0 20.0 20.0 -20.0 -20.0 20.0 20.0 -20.0 0.0 0.0 20.0 20.0 70 38.7 59.4 73 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 60.0 5.9 0.0 0.0 0.0 0.00 0.00 0.00 0.00 -20.0 0.0 20.0 20.0 -20.0 1 3 1 1 1 1 1 20.0 20.0 20.0 20.0 20.0 20.0 20.0 -20.0 1 15.9 0.0 0 0 2 -20 60 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 1 0 0 0 0 0 0 0 0 0 0 0 0 1 53 53 57332.2 24183.1 4678.9 2162.4 69.6 8277.8 0.0 0.0 0.0 0.0 0 1 0 0 0 0 0 0 0 0 0 -20.0 0.0 0.0 0.0 0102 0003 0000 0000 0000 0000 0000 0000");
-
+            var localIp = GetLocalIPAddress();
             Task.Run(() =>
             {
                 while (true)
                 {
-                    var data = Encoding.UTF8.GetBytes($"pm {DateTime.Now.Second} 190.9 6.0 72.6 70.5 37.5 6.6 53.6 120.0 20.0 20.0 64.0 53.0 0.0 23.5 20.0 15 14 14 14 71.5 100 6 6.0 21.0 190.0 0.0 79.0 -20.0 -20.0 20.0 20.0 -20.0 0.0 0.0 20.0 20.0 -20.0 -20.0 20.0 20.0 -20.0 0.0 0.0 20.0 20.0 70 38.7 59.4 73 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 60.0 5.9 0.0 0.0 0.0 0.00 0.00 0.00 0.00 -20.0 0.0 20.0 20.0 -20.0 1 3 1 1 1 1 1 20.0 20.0 20.0 20.0 20.0 20.0 20.0 -20.0 1 15.9 0.0 0 0 2 -20 60 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 1 0 0 0 0 0 0 0 0 0 0 0 0 1 53 53 57332.2 24183.1 4678.9 2162.4 69.6 8277.8 0.0 0.0 0.0 0.0 0 1 0 0 0 0 0 0 0 0 0 -20.0 0.0 0.0 0.0 0102 0003 0000 0000 0000 0000 0000 0000");
+                    var data = Encoding.UTF8.GetBytes($"pm {DateTime.Now.Second} 190.9 6.0 72.6 70.5 37.5 6.6 53.6 120.0 20.0 20.0 64.0 53.0 0.0 23.5 20.0 15 14 14 14 71.5 100 6 6.0 21.0 190.0 0.0 79.0 -20.0 -20.0 20.0 20.0 -20.0 0.0 0.0 20.0 20.0 -20.0 -20.0 20.0 20.0 -20.0 0.0 0.0 20.0 20.0 70 38.7 59.4 73 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 60.0 5.9 0.0 0.0 0.0 0.00 0.00 0.00 0.00 -20.0 0.0 20.0 20.0 -20.0 1 3 1 1 1 1 1 20.0 20.0 20.0 20.0 20.0 20.0 20.0 -20.0 1 15.9 0.0 0 0 2 -20 60 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 1 0 0 0 0 0 0 0 0 0 0 0 0 1 53 53 57332.2 24183.1 4678.9 2162.4 69.6 8277.8 0.0 0.0 0.0 0.0 0 1 0 0 0 0 0 0 0 0 0 -20.0 0.0 0.0 0.0 9999 0003 0203 9300 0245 0102 0050 0203");
 
-                    // new UdpClient().Send(data, data.Length, "255.255.255.255", port);
-                    new UdpClient().Send(data, data.Length, "192.168.178.58", port);
+                    new UdpClient().Send(data, data.Length, localIp, port);
                     Thread.Sleep(1000);
                 }
             });
+        }
+
+        private static string GetLocalIPAddress()
+        {
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                return endPoint.Address.ToString();
+            }
         }
     }
 }
