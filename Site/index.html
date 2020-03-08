@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1>Heizung</h1>
-        <label for="temperature">Temperature</label>
-        <label name="temperature" id="temperature"></label>
+	<head>
+		<style>
+			div {
+				display: grid;
+				grid-template-columns: 200px;
+			}
+			label {
+				grid-column: 1 / 2;
+			}
 
-        <label for="kessel">Kessel</label>
-        <label name="kessel" id="kessel"></label>
+			.value_label {
+				grid-column: 2 / 3;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Heizung</h1>
+		<div id="main_div"></div>
+		<!-- <label for="temperature">Temperature</label>
+		<label name="temperature" id="temperature"></label>
 
-        <label for="timestamp">Timestamp</label>
-        <label name="timestamp" id="timestamp"></label>
-    </body>
+		<label for="kessel">Kessel</label>
+		<label name="kessel" id="kessel"></label>
 
-    <script src="script.js"></script>
+		<label for="timestamp">Timestamp</label>
+		<label name="timestamp" id="timestamp"></label> -->
+	</body>
+
+	<script src="script.js"></script>
 </html>
