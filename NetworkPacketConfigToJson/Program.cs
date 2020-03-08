@@ -84,27 +84,11 @@ namespace NetworkPacketConfigToJson
                     Console.WriteLine("Fehler bei der Konvertierung:\n" + e);
                 }
 
-                // sort and remove duplicates
-                config.Sort(new IdComparer());
-                var lastId = -1;
-                var i = 0;
-                while (i < config.Count)
-                {
-                    if (config[i].Id != lastId)
-                    {
-                        lastId = config[i].Id;
-                        i++;
-                    }
-                    else
-                        config.RemoveAt(i);
-                }
-
                 #endregion
 
                 #region Digital
 
                 // read Digital Config
-                // var digital = new List<DigitalNetworkPacketModel>();
                 startedReading = false;
                 DigitalNetworkPacketModel currentDigital = null;
                 BitModel currentBit = null;
@@ -186,10 +170,12 @@ namespace NetworkPacketConfigToJson
                     Console.WriteLine("Fehler bei der Konvertierung:\n" + e);
                 }
 
+                #endregion
+
                 // sort and remove duplicates
                 config.Sort(new IdComparer());
-                lastId = -1;
-                i = 0;
+                var lastId = -1;
+                var i = 0;
                 while (i < config.Count)
                 {
                     if (config[i].Id != lastId)
@@ -218,8 +204,6 @@ namespace NetworkPacketConfigToJson
                     else
                         config.RemoveAt(i);
                 }
-
-                #endregion
 
                 // write back to file
                 var json = JsonConvert.SerializeObject(config, new JsonSerializerSettings
