@@ -1,0 +1,12 @@
+[
+  {
+    "id": "783964b304c05ce0b97bc826051b6144",
+    "name": "Heizung",
+    "domain": null,
+    "port": 80,
+    "path": "../",
+    "running": true,
+    "starting": false,
+    "stopping": false
+  }
+]

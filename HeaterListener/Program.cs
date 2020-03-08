@@ -99,15 +99,15 @@ namespace HeaterListener
                     {
                         var bytes = UdpClient.Receive(ref sender);
                         string message = Encoding.UTF8.GetString(bytes);
-                        Console.WriteLine("Received: " + message);
 
                         if (message != previousInput)
                         {
                             previousInput = message;
                             ProcessData(message);
-                            Console.WriteLine("Processed");
+                            Console.WriteLine("\nProcessed: \n" + message);
                         }
-
+                        else
+                            Console.WriteLine("\nReceived: \n" + message);
                     }
                     catch (Exception e)
                     {

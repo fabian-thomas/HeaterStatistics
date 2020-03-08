@@ -10,3 +10,5 @@
 /packages
 
 # projects to ignore
+Site/WebServer/AppData/Roaming/*
+!Site/WebServer/AppData/Roaming/Fenix
