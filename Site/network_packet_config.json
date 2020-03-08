@@ -1,16 +1,6 @@
 {
   "AnalogNetworkPacketConfig": [
     {
-      "Name": "TK",
-      "Unit": "°C",
-      "Id": 0
-    },
-    {
-      "Name": "TRG",
-      "Unit": "°C",
-      "Id": 1
-    },
-    {
       "Name": "O2",
       "Unit": "%",
       "Id": 2
