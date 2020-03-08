@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Text.Json;
 using System.IO;
 using System.Collections.Generic;
-using System.Text.Encodings.Web;
 using NetworkPacketConfigToJson.Models;
+using Newtonsoft.Json;
 
 namespace NetworkPacketConfigToJson
 {
@@ -24,7 +23,7 @@ namespace NetworkPacketConfigToJson
                 #region Analog
 
                 // read Analog Config
-                var analog = new List<AnalogNetworkPacketModel>();
+                var config = new List<NetworkPacketModel>();
                 var startedReading = false;
                 AnalogNetworkPacketModel currentAnalog = null;
                 try
@@ -47,7 +46,7 @@ namespace NetworkPacketConfigToJson
                                     if (int.TryParse(tuple.Item1, out id))
                                     {
                                         currentAnalog = new AnalogNetworkPacketModel() { Id = id };
-                                        analog.Add(currentAnalog);
+                                        config.Add(currentAnalog);
                                     }
                                     else throw new ReadParameterException($"Id has to be integer: {toRead}");
                                     toRead = tuple.Item2;
@@ -86,29 +85,30 @@ namespace NetworkPacketConfigToJson
                 }
 
                 // sort and remove duplicates
-                analog.Sort(new IdComparer());
+                config.Sort(new IdComparer());
                 var lastId = -1;
                 var i = 0;
-                while (i < analog.Count)
+                while (i < config.Count)
                 {
-                    if (analog[i].Id != lastId)
+                    if (config[i].Id != lastId)
                     {
-                        lastId = analog[i].Id;
+                        lastId = config[i].Id;
                         i++;
                     }
                     else
-                        analog.RemoveAt(i);
+                        config.RemoveAt(i);
                 }
 
                 #endregion
 
                 #region Digital
 
-                // read Analog Config
-                var digital = new List<DigitalNetworkPacketModel>();
+                // read Digital Config
+                // var digital = new List<DigitalNetworkPacketModel>();
                 startedReading = false;
                 DigitalNetworkPacketModel currentDigital = null;
                 BitModel currentBit = null;
+                var lastAnalogId = config[config.Count - 1].Id;
                 try
                 {
                     if (toRead != "")
@@ -130,6 +130,7 @@ namespace NetworkPacketConfigToJson
                                         var tuple = ReadApastrophContent(toRead.Substring(("id=").Length, toRead.Length - ("id=").Length));
                                         if (int.TryParse(tuple.Item1, out id))
                                         {
+                                            id += lastAnalogId + 1;
                                             if (currentDigital != null && currentDigital.Id == id)
                                             {
                                                 currentBit = new BitModel();
@@ -138,7 +139,7 @@ namespace NetworkPacketConfigToJson
                                             else
                                             {
                                                 currentDigital = new DigitalNetworkPacketModel() { Id = id };
-                                                digital.Add(currentDigital);
+                                                config.Add(currentDigital);
                                                 currentBit = new BitModel();
                                                 currentDigital.Bits.Add(currentBit);
                                             }
@@ -186,40 +187,45 @@ namespace NetworkPacketConfigToJson
                 }
 
                 // sort and remove duplicates
-                digital.Sort(new IdComparer());
+                config.Sort(new IdComparer());
                 lastId = -1;
                 i = 0;
-                while (i < digital.Count)
+                while (i < config.Count)
                 {
-                    if (digital[i].Id != lastId)
+                    if (config[i].Id != lastId)
                     {
-                        digital[i].Bits.Sort(new BitComparer());
-                        var lastBit = -1;
-                        var f = 0;
-                        while (f < digital[i].Bits.Count)
+                        if (config[i].GetType() == typeof(DigitalNetworkPacketModel))
                         {
-                            if (digital[i].Bits[f].Bit != lastBit)
+                            var digital = config[i] as DigitalNetworkPacketModel;
+                            digital.Bits.Sort(new BitComparer());
+                            var lastBit = -1;
+                            var f = 0;
+                            while (f < digital.Bits.Count)
                             {
-                                lastBit = digital[i].Bits[f].Bit;
-                                f++;
+                                if (digital.Bits[f].Bit != lastBit)
+                                {
+                                    lastBit = digital.Bits[f].Bit;
+                                    f++;
+                                }
+                                else
+                                    digital.Bits.RemoveAt(f);
                             }
-                            else
-                                digital[i].Bits.RemoveAt(f);
                         }
-                        lastId = digital[i].Id;
+
+                        lastId = config[i].Id;
                         i++;
                     }
                     else
-                        digital.RemoveAt(i);
+                        config.RemoveAt(i);
                 }
 
                 #endregion
 
                 // write back to file
-                var json = JsonSerializer.Serialize(new HeaterNetworkPacketConfig() { AnalogNetworkPacketConfig = analog, DigitalNetworkPacketConfig = digital }, new JsonSerializerOptions
+                var json = JsonConvert.SerializeObject(config, new JsonSerializerSettings
                 {
-                    WriteIndented = true,
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                    TypeNameHandling = TypeNameHandling.Auto,
+                    Formatting = Formatting.Indented
                 });
                 File.WriteAllText(OUTPUT_FILE_NAME, json);
 

@@ -1,1072 +1,1078 @@
-{
-  "AnalogNetworkPacketConfig": [
-    {
-      "Name": "O2",
-      "Unit": "%",
-      "Id": 2
-    },
-    {
-      "Name": "TPo",
-      "Unit": "°C",
-      "Id": 3
-    },
-    {
-      "Name": "TPm",
-      "Unit": "°C",
-      "Id": 4
-    },
-    {
-      "Name": "TPu",
-      "Unit": "°C",
-      "Id": 5
-    },
-    {
-      "Name": "Taus",
-      "Unit": "°C",
-      "Id": 6
-    },
-    {
-      "Name": "TVL_1",
-      "Unit": "°C",
-      "Id": 7
-    },
-    {
-      "Name": "TVL_2",
-      "Unit": "°C",
-      "Id": 8
-    },
-    {
-      "Name": "TR1",
-      "Unit": "°C",
-      "Id": 9
-    },
-    {
-      "Name": "TR2",
-      "Unit": "°C",
-      "Id": 10
-    },
-    {
-      "Name": "TB1",
-      "Unit": "°C",
-      "Id": 11
-    },
-    {
-      "Name": "TVLs_1",
-      "Unit": "°C",
-      "Id": 12
-    },
-    {
-      "Name": "TVLs_2",
-      "Unit": "°C",
-      "Id": 13
-    },
-    {
-      "Name": "TRs_1",
-      "Unit": "°C",
-      "Id": 14
-    },
-    {
-      "Name": "TRs_2",
-      "Unit": "°C",
-      "Id": 15
-    },
-    {
-      "Name": "Prim.ist",
-      "Unit": "%",
-      "Id": 16
-    },
-    {
-      "Name": "Prim.soll",
-      "Unit": "%",
-      "Id": 17
-    },
-    {
-      "Name": "Sek.ist",
-      "Unit": "%",
-      "Id": 18
-    },
-    {
-      "Name": "Sek.soll",
-      "Unit": "%",
-      "Id": 19
-    },
-    {
-      "Name": "SZsoll",
-      "Unit": "%",
-      "Id": 20
-    },
-    {
-      "Name": "RLP",
-      "Unit": "%",
-      "Id": 21
-    },
-    {
-      "Name": "ZK",
-      "Unit": "",
-      "Id": 22
-    },
-    {
-      "Name": "O2_soll",
-      "Unit": "%",
-      "Id": 23
-    },
-    {
-      "Name": "U_Lambda",
-      "Unit": "mV",
-      "Id": 24
-    },
-    {
-      "Name": "TRG_soll",
-      "Unit": "°C",
-      "Id": 25
-    },
-    {
-      "Name": "TRG_max",
-      "Unit": "°C",
-      "Id": 26
-    },
-    {
-      "Name": "TKsoll",
-      "Unit": "°C",
-      "Id": 27
-    },
-    {
-      "Name": "TVL_3",
-      "Unit": "°C",
-      "Id": 28
-    },
-    {
-      "Name": "TVL_4",
-      "Unit": "°C",
-      "Id": 29
-    },
-    {
-      "Name": "TR3",
-      "Unit": "°C",
-      "Id": 30
-    },
-    {
-      "Name": "TR4",
-      "Unit": "°C",
-      "Id": 31
-    },
-    {
-      "Name": "TB2",
-      "Unit": "°C",
-      "Id": 32
-    },
-    {
-      "Name": "TVLs_3",
-      "Unit": "°C",
-      "Id": 33
-    },
-    {
-      "Name": "TVLs_4",
-      "Unit": "°C",
-      "Id": 34
-    },
-    {
-      "Name": "TRs_3",
-      "Unit": "°C",
-      "Id": 35
-    },
-    {
-      "Name": "TRs_4",
-      "Unit": "°C",
-      "Id": 36
-    },
-    {
-      "Name": "TVL_5",
-      "Unit": "°C",
-      "Id": 37
-    },
-    {
-      "Name": "TVL_6",
-      "Unit": "°C",
-      "Id": 38
-    },
-    {
-      "Name": "TR5",
-      "Unit": "°C",
-      "Id": 39
-    },
-    {
-      "Name": "TR6",
-      "Unit": "°C",
-      "Id": 40
-    },
-    {
-      "Name": "TB3",
-      "Unit": "°C",
-      "Id": 41
-    },
-    {
-      "Name": "TVLs_5",
-      "Unit": "°C",
-      "Id": 42
-    },
-    {
-      "Name": "TVLs_6",
-      "Unit": "°C",
-      "Id": 43
-    },
-    {
-      "Name": "TRs_5",
-      "Unit": "°C",
-      "Id": 44
-    },
-    {
-      "Name": "TRs_6",
-      "Unit": "°C",
-      "Id": 45
-    },
-    {
-      "Name": "SZist",
-      "Unit": "%",
-      "Id": 46
-    },
-    {
-      "Name": "Tplat",
-      "Unit": "°C",
-      "Id": 47
-    },
-    {
-      "Name": "TRL",
-      "Unit": "°C",
-      "Id": 48
-    },
-    {
-      "Name": "PufLad",
-      "Unit": "%",
-      "Id": 49
-    },
-    {
-      "Name": "null0",
-      "Unit": "°C",
-      "Id": 50
-    },
-    {
-      "Name": "null1",
-      "Unit": "°C",
-      "Id": 51
-    },
-    {
-      "Name": "null2",
-      "Unit": "°C",
-      "Id": 52
-    },
-    {
-      "Name": "MWZ Vorl.",
-      "Unit": "°C",
-      "Id": 53
-    },
-    {
-      "Name": "MWZ Rueckl.",
-      "Unit": "°C",
-      "Id": 54
-    },
-    {
-      "Name": "MWZ Durchf.",
-      "Unit": "",
-      "Id": 55
-    },
-    {
-      "Name": "MWZ Leist.",
-      "Unit": "KW",
-      "Id": 56
-    },
-    {
-      "Name": "TFW",
-      "Unit": "°C",
-      "Id": 57
-    },
-    {
-      "Name": "TRLsoll",
-      "Unit": "°C",
-      "Id": 58
-    },
-    {
-      "Name": "TA Gem.",
-      "Unit": "°C",
-      "Id": 59
-    },
-    {
-      "Name": "VFS Flow",
-      "Unit": "l/min",
-      "Id": 60
-    },
-    {
-      "Name": "VFS Temp",
-      "Unit": "°C",
-      "Id": 61
-    },
-    {
-      "Name": "IO32 VL",
-      "Unit": "°C",
-      "Id": 62
-    },
-    {
-      "Name": "IO32 521",
-      "Unit": "Pa",
-      "Id": 63
-    },
-    {
-      "Name": "IO32 522",
-      "Unit": "Pa",
-      "Id": 64
-    },
-    {
-      "Name": "IO32 509",
-      "Unit": "Pa",
-      "Id": 65
-    },
-    {
-      "Name": "IO32 510",
-      "Unit": "Pa",
-      "Id": 66
-    },
-    {
-      "Name": "TBA",
-      "Unit": "°C",
-      "Id": 67
-    },
-    {
-      "Name": "TVLs_A",
-      "Unit": "°C",
-      "Id": 68
-    },
-    {
-      "Name": "TRs_A",
-      "Unit": "°C",
-      "Id": 69
-    },
-    {
-      "Name": "TRA",
-      "Unit": "°C",
-      "Id": 70
-    },
-    {
-      "Name": "TVL_A",
-      "Unit": "°C",
-      "Id": 71
-    },
-    {
-      "Name": "FRA Zustand",
-      "Unit": "",
-      "Id": 72
-    },
-    {
-      "Name": "FR1 Zustand",
-      "Unit": "",
-      "Id": 73
-    },
-    {
-      "Name": "FR2 Zustand",
-      "Unit": "",
-      "Id": 74
-    },
-    {
-      "Name": "FR3 Zustand",
-      "Unit": "",
-      "Id": 75
-    },
-    {
-      "Name": "FR4 Zustand",
-      "Unit": "",
-      "Id": 76
-    },
-    {
-      "Name": "FR5 Zustand",
-      "Unit": "",
-      "Id": 77
-    },
-    {
-      "Name": "FR6 Zustand",
-      "Unit": "",
-      "Id": 78
-    },
-    {
-      "Name": "TRA_A",
-      "Unit": "°C",
-      "Id": 79
-    },
-    {
-      "Name": "TRA_1",
-      "Unit": "°C",
-      "Id": 80
-    },
-    {
-      "Name": "TRA_2",
-      "Unit": "°C",
-      "Id": 81
-    },
-    {
-      "Name": "TRA_3",
-      "Unit": "°C",
-      "Id": 82
-    },
-    {
-      "Name": "TRA_4",
-      "Unit": "°C",
-      "Id": 83
-    },
-    {
-      "Name": "TRA_5",
-      "Unit": "°C",
-      "Id": 84
-    },
-    {
-      "Name": "TRA_6",
-      "Unit": "°C",
-      "Id": 85
-    },
-    {
-      "Name": "PK_TK",
-      "Unit": "°C",
-      "Id": 86
-    },
-    {
-      "Name": "PK_ZK",
-      "Unit": "",
-      "Id": 87
-    },
-    {
-      "Name": "PK_O2",
-      "Unit": "%",
-      "Id": 88
-    },
-    {
-      "Name": "PK_O2soll",
-      "Unit": "%",
-      "Id": 89
-    },
-    {
-      "Name": "DUMMY_1",
-      "Unit": " ",
-      "Id": 90
-    },
-    {
-      "Name": "PK_TKsoll",
-      "Unit": "°C",
-      "Id": 91
-    },
-    {
-      "Name": "PK_TRG",
-      "Unit": "°C",
-      "Id": 92
-    },
-    {
-      "Name": "PK_TRL",
-      "Unit": "°C",
-      "Id": 93
-    },
-    {
-      "Name": "PK_TRLsoll",
-      "Unit": "°C",
-      "Id": 94
-    },
-    {
-      "Name": "PK_RLP",
-      "Unit": "%",
-      "Id": 95
-    },
-    {
-      "Name": "PK_Tplat",
-      "Unit": "°C",
-      "Id": 96
-    },
-    {
-      "Name": "PK_SZs",
-      "Unit": "%",
-      "Id": 97
-    },
-    {
-      "Name": "PK_SZ",
-      "Unit": "%",
-      "Id": 98
-    },
-    {
-      "Name": "PK_KeBrstScale",
-      "Unit": "%",
-      "Id": 99
-    },
-    {
-      "Name": "PK_ESRegler",
-      "Unit": "%",
-      "Id": 100
-    },
-    {
-      "Name": "PK_ESsoll",
-      "Unit": "%",
-      "Id": 101
-    },
-    {
-      "Name": "PK_I Es",
-      "Unit": "mA",
-      "Id": 102
-    },
-    {
-      "Name": "PK_I Ra",
-      "Unit": "mA",
-      "Id": 103
-    },
-    {
-      "Name": "PK_I Aa",
-      "Unit": "mA",
-      "Id": 104
-    },
-    {
-      "Name": "PK_I Sr",
-      "Unit": "mA",
-      "Id": 105
-    },
-    {
-      "Name": "PK_I Rein",
-      "Unit": "mA",
-      "Id": 106
-    },
-    {
-      "Name": "PK_U_Lambda",
-      "Unit": "mV",
-      "Id": 107
-    },
-    {
-      "Name": "PK_MWZ Vorl.",
-      "Unit": "°C",
-      "Id": 108
-    },
-    {
-      "Name": "PK_MWZ Rueckl.",
-      "Unit": "°C",
-      "Id": 109
-    },
-    {
-      "Name": "PK_MWZ Durchf.",
-      "Unit": "",
-      "Id": 110
-    },
-    {
-      "Name": "PK_MWZ Leist.",
-      "Unit": "KW",
-      "Id": 111
-    },
-    {
-      "Name": "PK_SR motor",
-      "Unit": "",
-      "Id": 112
-    },
-    {
-      "Name": "PK_SRpos ist",
-      "Unit": "",
-      "Id": 113
-    },
-    {
-      "Name": "PK_SR mode",
-      "Unit": "",
-      "Id": 114
-    },
-    {
-      "Name": "PK_UsePos",
-      "Unit": "",
-      "Id": 115
-    },
-    {
-      "Name": "PK_UseMotSoll",
-      "Unit": "mm",
-      "Id": 116
-    },
-    {
-      "Name": "PK_UseMotIst",
-      "Unit": "mm",
-      "Id": 117
-    },
-    {
-      "Name": "PK_Einschubschn. BSZ",
-      "Unit": "",
-      "Id": 118
-    },
-    {
-      "Name": "PK_Verbrauchszähler",
-      "Unit": "kg",
-      "Id": 119
-    },
-    {
-      "Name": "PK_LZ LB seit Ent.",
-      "Unit": "Min",
-      "Id": 120
-    },
-    {
-      "Name": "PK_LZ ES seit Füll.",
-      "Unit": "Min",
-      "Id": 121
-    },
-    {
-      "Name": "PK_Anzahl Entasch.",
-      "Unit": "",
-      "Id": 122
-    },
-    {
-      "Name": "PK_Anzahl SR Beweg.",
-      "Unit": "",
-      "Id": 123
-    },
-    {
-      "Name": "PK_Lagerstand",
-      "Unit": "kg",
-      "Id": 124
-    },
-    {
-      "Name": "PK_Leistung",
-      "Unit": "%",
-      "Id": 125
-    },
-    {
-      "Name": "PK_I_Lambda",
-      "Unit": "mA",
-      "Id": 126
-    },
-    {
-      "Name": "PK_U_lambda_soll",
-      "Unit": "mV",
-      "Id": 127
-    },
-    {
-      "Name": "PK_Zustand",
-      "Unit": "",
-      "Id": 128
-    },
-    {
-      "Name": "FW-Anforderung",
-      "Unit": "",
-      "Id": 129
-    },
-    {
-      "Name": "Verb-Anforderung",
-      "Unit": "",
-      "Id": 130
-    },
-    {
-      "Name": "BSZ_ST_Steuerung",
-      "Unit": "h",
-      "Id": 131
-    },
-    {
-      "Name": "BSZ_ST_Heizung",
-      "Unit": "h",
-      "Id": 132
-    },
-    {
-      "Name": "BSZ_ST_Volllast",
-      "Unit": "h",
-      "Id": 133
-    },
-    {
-      "Name": "BSZ_ST_Teillast",
-      "Unit": "h",
-      "Id": 134
-    },
-    {
-      "Name": "BSZ_ST_Zündung",
-      "Unit": "h",
-      "Id": 135
-    },
-    {
-      "Name": "BSZ_ST_Saugzug",
-      "Unit": "h",
-      "Id": 136
-    },
-    {
-      "Name": "BSZ_PK_Heizung",
-      "Unit": "h",
-      "Id": 137
-    },
-    {
-      "Name": "BSZ_PK_Zündung",
-      "Unit": "h",
-      "Id": 138
-    },
-    {
-      "Name": "BSZ_PK_Saugzug",
-      "Unit": "h",
-      "Id": 139
-    },
-    {
-      "Name": "BSZ_PK_Austragung",
-      "Unit": "h",
-      "Id": 140
-    },
-    {
-      "Name": "HKZustand_A",
-      "Unit": "",
-      "Id": 141
-    },
-    {
-      "Name": "HKZustand_1",
-      "Unit": "",
-      "Id": 142
-    },
-    {
-      "Name": "HKZustand_2",
-      "Unit": "",
-      "Id": 143
-    },
-    {
-      "Name": "HKZustand_3",
-      "Unit": "",
-      "Id": 144
-    },
-    {
-      "Name": "HKZustand_4",
-      "Unit": "",
-      "Id": 145
-    },
-    {
-      "Name": "HKZustand_5",
-      "Unit": "",
-      "Id": 146
-    },
-    {
-      "Name": "HKZustand_6",
-      "Unit": "",
-      "Id": 147
-    },
-    {
-      "Name": "BoiZustand_A",
-      "Unit": "",
-      "Id": 148
-    },
-    {
-      "Name": "BoiZustand_1",
-      "Unit": "",
-      "Id": 149
-    },
-    {
-      "Name": "BoiZustand_2",
-      "Unit": "",
-      "Id": 150
-    },
-    {
-      "Name": "BoiZustand_3",
-      "Unit": "",
-      "Id": 151
-    },
-    {
-      "Name": "TVG",
-      "Unit": "°C",
-      "Id": 152
-    },
-    {
-      "Name": "PK_UseSoll",
-      "Unit": "mm",
-      "Id": 153
-    },
-    {
-      "Name": "PK_UseIst",
-      "Unit": "mm",
-      "Id": 154
-    },
-    {
-      "Name": "PK_UseStrom",
-      "Unit": "mA",
-      "Id": 155
-    }
-  ],
-  "DigitalNetworkPacketConfig": [
-    {
-      "Bits": [
-        {
-          "Bit": 1,
-          "Name": "HKP1"
-        },
-        {
-          "Bit": 2,
-          "Name": "HKP2"
-        },
-        {
-          "Bit": 3,
-          "Name": "M1A"
-        },
-        {
-          "Bit": 4,
-          "Name": "M1Z"
-        },
-        {
-          "Bit": 5,
-          "Name": "M2A"
-        },
-        {
-          "Bit": 6,
-          "Name": "M2Z"
-        },
-        {
-          "Bit": 7,
-          "Name": "Boilanf.1"
-        },
-        {
-          "Bit": 8,
-          "Name": "Lamdaheiz."
-        },
-        {
-          "Bit": 10,
-          "Name": "Zündheiz."
-        },
-        {
-          "Bit": 11,
-          "Name": "SLK_auf"
-        },
-        {
-          "Bit": 12,
-          "Name": "SLK_zu"
-        },
-        {
-          "Bit": 13,
-          "Name": "PLK_auf"
-        },
-        {
-          "Bit": 14,
-          "Name": "PLK_zu"
-        }
-      ],
-      "Id": 0
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "STB"
-        },
-        {
-          "Bit": 1,
-          "Name": "TKS"
-        },
-        {
-          "Bit": 2,
-          "Name": "Störung"
-        }
-      ],
-      "Id": 1
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "BP1"
-        },
-        {
-          "Bit": 1,
-          "Name": "BP2"
-        },
-        {
-          "Bit": 2,
-          "Name": "BP3"
-        },
-        {
-          "Bit": 3,
-          "Name": "RLm_auf"
-        },
-        {
-          "Bit": 4,
-          "Name": "RLm_zu"
-        },
-        {
-          "Bit": 5,
-          "Name": "Schnellladev."
-        }
-      ],
-      "Id": 2
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "HKP3"
-        },
-        {
-          "Bit": 1,
-          "Name": "HKP4"
-        },
-        {
-          "Bit": 3,
-          "Name": "M3A"
-        },
-        {
-          "Bit": 4,
-          "Name": "M3Z"
-        },
-        {
-          "Bit": 5,
-          "Name": "M4A"
-        },
-        {
-          "Bit": 6,
-          "Name": "M4Z"
-        },
-        {
-          "Bit": 7,
-          "Name": "Boilanf.2"
-        },
-        {
-          "Bit": 8,
-          "Name": "ZP Boi.1"
-        },
-        {
-          "Bit": 9,
-          "Name": "ZP Boi.2"
-        },
-        {
-          "Bit": 10,
-          "Name": "ZP Boi.3"
-        }
-      ],
-      "Id": 3
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "HKP5"
-        },
-        {
-          "Bit": 1,
-          "Name": "HKP6"
-        },
-        {
-          "Bit": 3,
-          "Name": "M5A"
-        },
-        {
-          "Bit": 4,
-          "Name": "M5Z"
-        },
-        {
-          "Bit": 5,
-          "Name": "M6A"
-        },
-        {
-          "Bit": 6,
-          "Name": "M6Z"
-        },
-        {
-          "Bit": 7,
-          "Name": "Boilanf.3"
-        },
-        {
-          "Bit": 11,
-          "Name": "FW Freig."
-        },
-        {
-          "Bit": 12,
-          "Name": "FW Pumpe"
-        },
-        {
-          "Bit": 13,
-          "Name": "FLP"
-        }
-      ],
-      "Id": 4
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "HKPA"
-        },
-        {
-          "Bit": 1,
-          "Name": "MAA"
-        },
-        {
-          "Bit": 2,
-          "Name": "MAZ"
-        },
-        {
-          "Bit": 3,
-          "Name": "BPA"
-        },
-        {
-          "Bit": 4,
-          "Name": "ZP Boi.A"
-        },
-        {
-          "Bit": 5,
-          "Name": "Boilanf.A"
-        }
-      ],
-      "Id": 5
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "PK_L Heiz."
-        },
-        {
-          "Bit": 1,
-          "Name": "PK_Z Heiz."
-        },
-        {
-          "Bit": 2,
-          "Name": "PK_Z Geb."
-        },
-        {
-          "Bit": 5,
-          "Name": "PK_ES Run"
-        },
-        {
-          "Bit": 6,
-          "Name": "PK_ES Dir"
-        },
-        {
-          "Bit": 7,
-          "Name": "PK_AS Saug"
-        },
-        {
-          "Bit": 8,
-          "Name": "PK_AS RA Run"
-        },
-        {
-          "Bit": 9,
-          "Name": "PK_AS RA Dir"
-        },
-        {
-          "Bit": 10,
-          "Name": "PK_Rein En"
-        },
-        {
-          "Bit": 11,
-          "Name": "PK_Rein Run"
-        },
-        {
-          "Bit": 12,
-          "Name": "PK_RLm_auf"
-        },
-        {
-          "Bit": 13,
-          "Name": "PK_RLm_zu"
-        },
-        {
-          "Bit": 14,
-          "Name": "PK_RL Pumpe"
-        }
-      ],
-      "Id": 6
-    },
-    {
-      "Bits": [
-        {
-          "Bit": 0,
-          "Name": "gFlP"
-        },
-        {
-          "Bit": 1,
-          "Name": "gFlM auf"
-        },
-        {
-          "Bit": 2,
-          "Name": "gFlM zu"
-        }
-      ],
-      "Id": 7
-    }
-  ]
-}
+[
+  {
+    "Name": "TK",
+    "Unit": "°C",
+    "Id": 0
+  },
+  {
+    "Name": "TRG",
+    "Unit": "°C",
+    "Id": 1
+  },
+  {
+    "Name": "O2",
+    "Unit": "%",
+    "Id": 2
+  },
+  {
+    "Name": "TPo",
+    "Unit": "°C",
+    "Id": 3
+  },
+  {
+    "Name": "TPm",
+    "Unit": "°C",
+    "Id": 4
+  },
+  {
+    "Name": "TPu",
+    "Unit": "°C",
+    "Id": 5
+  },
+  {
+    "Name": "Taus",
+    "Unit": "°C",
+    "Id": 6
+  },
+  {
+    "Name": "TVL_1",
+    "Unit": "°C",
+    "Id": 7
+  },
+  {
+    "Name": "TVL_2",
+    "Unit": "°C",
+    "Id": 8
+  },
+  {
+    "Name": "TR1",
+    "Unit": "°C",
+    "Id": 9
+  },
+  {
+    "Name": "TR2",
+    "Unit": "°C",
+    "Id": 10
+  },
+  {
+    "Name": "TB1",
+    "Unit": "°C",
+    "Id": 11
+  },
+  {
+    "Name": "TVLs_1",
+    "Unit": "°C",
+    "Id": 12
+  },
+  {
+    "Name": "TVLs_2",
+    "Unit": "°C",
+    "Id": 13
+  },
+  {
+    "Name": "TRs_1",
+    "Unit": "°C",
+    "Id": 14
+  },
+  {
+    "Name": "TRs_2",
+    "Unit": "°C",
+    "Id": 15
+  },
+  {
+    "Name": "Prim.ist",
+    "Unit": "%",
+    "Id": 16
+  },
+  {
+    "Name": "Prim.soll",
+    "Unit": "%",
+    "Id": 17
+  },
+  {
+    "Name": "Sek.ist",
+    "Unit": "%",
+    "Id": 18
+  },
+  {
+    "Name": "Sek.soll",
+    "Unit": "%",
+    "Id": 19
+  },
+  {
+    "Name": "SZsoll",
+    "Unit": "%",
+    "Id": 20
+  },
+  {
+    "Name": "RLP",
+    "Unit": "%",
+    "Id": 21
+  },
+  {
+    "Name": "ZK",
+    "Unit": "",
+    "Id": 22
+  },
+  {
+    "Name": "O2_soll",
+    "Unit": "%",
+    "Id": 23
+  },
+  {
+    "Name": "U_Lambda",
+    "Unit": "mV",
+    "Id": 24
+  },
+  {
+    "Name": "TRG_soll",
+    "Unit": "°C",
+    "Id": 25
+  },
+  {
+    "Name": "TRG_max",
+    "Unit": "°C",
+    "Id": 26
+  },
+  {
+    "Name": "TKsoll",
+    "Unit": "°C",
+    "Id": 27
+  },
+  {
+    "Name": "TVL_3",
+    "Unit": "°C",
+    "Id": 28
+  },
+  {
+    "Name": "TVL_4",
+    "Unit": "°C",
+    "Id": 29
+  },
+  {
+    "Name": "TR3",
+    "Unit": "°C",
+    "Id": 30
+  },
+  {
+    "Name": "TR4",
+    "Unit": "°C",
+    "Id": 31
+  },
+  {
+    "Name": "TB2",
+    "Unit": "°C",
+    "Id": 32
+  },
+  {
+    "Name": "TVLs_3",
+    "Unit": "°C",
+    "Id": 33
+  },
+  {
+    "Name": "TVLs_4",
+    "Unit": "°C",
+    "Id": 34
+  },
+  {
+    "Name": "TRs_3",
+    "Unit": "°C",
+    "Id": 35
+  },
+  {
+    "Name": "TRs_4",
+    "Unit": "°C",
+    "Id": 36
+  },
+  {
+    "Name": "TVL_5",
+    "Unit": "°C",
+    "Id": 37
+  },
+  {
+    "Name": "TVL_6",
+    "Unit": "°C",
+    "Id": 38
+  },
+  {
+    "Name": "TR5",
+    "Unit": "°C",
+    "Id": 39
+  },
+  {
+    "Name": "TR6",
+    "Unit": "°C",
+    "Id": 40
+  },
+  {
+    "Name": "TB3",
+    "Unit": "°C",
+    "Id": 41
+  },
+  {
+    "Name": "TVLs_5",
+    "Unit": "°C",
+    "Id": 42
+  },
+  {
+    "Name": "TVLs_6",
+    "Unit": "°C",
+    "Id": 43
+  },
+  {
+    "Name": "TRs_5",
+    "Unit": "°C",
+    "Id": 44
+  },
+  {
+    "Name": "TRs_6",
+    "Unit": "°C",
+    "Id": 45
+  },
+  {
+    "Name": "SZist",
+    "Unit": "%",
+    "Id": 46
+  },
+  {
+    "Name": "Tplat",
+    "Unit": "°C",
+    "Id": 47
+  },
+  {
+    "Name": "TRL",
+    "Unit": "°C",
+    "Id": 48
+  },
+  {
+    "Name": "PufLad",
+    "Unit": "%",
+    "Id": 49
+  },
+  {
+    "Name": "null0",
+    "Unit": "°C",
+    "Id": 50
+  },
+  {
+    "Name": "null1",
+    "Unit": "°C",
+    "Id": 51
+  },
+  {
+    "Name": "null2",
+    "Unit": "°C",
+    "Id": 52
+  },
+  {
+    "Name": "MWZ Vorl.",
+    "Unit": "°C",
+    "Id": 53
+  },
+  {
+    "Name": "MWZ Rueckl.",
+    "Unit": "°C",
+    "Id": 54
+  },
+  {
+    "Name": "MWZ Durchf.",
+    "Unit": "",
+    "Id": 55
+  },
+  {
+    "Name": "MWZ Leist.",
+    "Unit": "KW",
+    "Id": 56
+  },
+  {
+    "Name": "TFW",
+    "Unit": "°C",
+    "Id": 57
+  },
+  {
+    "Name": "TRLsoll",
+    "Unit": "°C",
+    "Id": 58
+  },
+  {
+    "Name": "TA Gem.",
+    "Unit": "°C",
+    "Id": 59
+  },
+  {
+    "Name": "VFS Flow",
+    "Unit": "l/min",
+    "Id": 60
+  },
+  {
+    "Name": "VFS Temp",
+    "Unit": "°C",
+    "Id": 61
+  },
+  {
+    "Name": "IO32 VL",
+    "Unit": "°C",
+    "Id": 62
+  },
+  {
+    "Name": "IO32 521",
+    "Unit": "Pa",
+    "Id": 63
+  },
+  {
+    "Name": "IO32 522",
+    "Unit": "Pa",
+    "Id": 64
+  },
+  {
+    "Name": "IO32 509",
+    "Unit": "Pa",
+    "Id": 65
+  },
+  {
+    "Name": "IO32 510",
+    "Unit": "Pa",
+    "Id": 66
+  },
+  {
+    "Name": "TBA",
+    "Unit": "°C",
+    "Id": 67
+  },
+  {
+    "Name": "TVLs_A",
+    "Unit": "°C",
+    "Id": 68
+  },
+  {
+    "Name": "TRs_A",
+    "Unit": "°C",
+    "Id": 69
+  },
+  {
+    "Name": "TRA",
+    "Unit": "°C",
+    "Id": 70
+  },
+  {
+    "Name": "TVL_A",
+    "Unit": "°C",
+    "Id": 71
+  },
+  {
+    "Name": "FRA Zustand",
+    "Unit": "",
+    "Id": 72
+  },
+  {
+    "Name": "FR1 Zustand",
+    "Unit": "",
+    "Id": 73
+  },
+  {
+    "Name": "FR2 Zustand",
+    "Unit": "",
+    "Id": 74
+  },
+  {
+    "Name": "FR3 Zustand",
+    "Unit": "",
+    "Id": 75
+  },
+  {
+    "Name": "FR4 Zustand",
+    "Unit": "",
+    "Id": 76
+  },
+  {
+    "Name": "FR5 Zustand",
+    "Unit": "",
+    "Id": 77
+  },
+  {
+    "Name": "FR6 Zustand",
+    "Unit": "",
+    "Id": 78
+  },
+  {
+    "Name": "TRA_A",
+    "Unit": "°C",
+    "Id": 79
+  },
+  {
+    "Name": "TRA_1",
+    "Unit": "°C",
+    "Id": 80
+  },
+  {
+    "Name": "TRA_2",
+    "Unit": "°C",
+    "Id": 81
+  },
+  {
+    "Name": "TRA_3",
+    "Unit": "°C",
+    "Id": 82
+  },
+  {
+    "Name": "TRA_4",
+    "Unit": "°C",
+    "Id": 83
+  },
+  {
+    "Name": "TRA_5",
+    "Unit": "°C",
+    "Id": 84
+  },
+  {
+    "Name": "TRA_6",
+    "Unit": "°C",
+    "Id": 85
+  },
+  {
+    "Name": "PK_TK",
+    "Unit": "°C",
+    "Id": 86
+  },
+  {
+    "Name": "PK_ZK",
+    "Unit": "",
+    "Id": 87
+  },
+  {
+    "Name": "PK_O2",
+    "Unit": "%",
+    "Id": 88
+  },
+  {
+    "Name": "PK_O2soll",
+    "Unit": "%",
+    "Id": 89
+  },
+  {
+    "Name": "DUMMY_1",
+    "Unit": " ",
+    "Id": 90
+  },
+  {
+    "Name": "PK_TKsoll",
+    "Unit": "°C",
+    "Id": 91
+  },
+  {
+    "Name": "PK_TRG",
+    "Unit": "°C",
+    "Id": 92
+  },
+  {
+    "Name": "PK_TRL",
+    "Unit": "°C",
+    "Id": 93
+  },
+  {
+    "Name": "PK_TRLsoll",
+    "Unit": "°C",
+    "Id": 94
+  },
+  {
+    "Name": "PK_RLP",
+    "Unit": "%",
+    "Id": 95
+  },
+  {
+    "Name": "PK_Tplat",
+    "Unit": "°C",
+    "Id": 96
+  },
+  {
+    "Name": "PK_SZs",
+    "Unit": "%",
+    "Id": 97
+  },
+  {
+    "Name": "PK_SZ",
+    "Unit": "%",
+    "Id": 98
+  },
+  {
+    "Name": "PK_KeBrstScale",
+    "Unit": "%",
+    "Id": 99
+  },
+  {
+    "Name": "PK_ESRegler",
+    "Unit": "%",
+    "Id": 100
+  },
+  {
+    "Name": "PK_ESsoll",
+    "Unit": "%",
+    "Id": 101
+  },
+  {
+    "Name": "PK_I Es",
+    "Unit": "mA",
+    "Id": 102
+  },
+  {
+    "Name": "PK_I Ra",
+    "Unit": "mA",
+    "Id": 103
+  },
+  {
+    "Name": "PK_I Aa",
+    "Unit": "mA",
+    "Id": 104
+  },
+  {
+    "Name": "PK_I Sr",
+    "Unit": "mA",
+    "Id": 105
+  },
+  {
+    "Name": "PK_I Rein",
+    "Unit": "mA",
+    "Id": 106
+  },
+  {
+    "Name": "PK_U_Lambda",
+    "Unit": "mV",
+    "Id": 107
+  },
+  {
+    "Name": "PK_MWZ Vorl.",
+    "Unit": "°C",
+    "Id": 108
+  },
+  {
+    "Name": "PK_MWZ Rueckl.",
+    "Unit": "°C",
+    "Id": 109
+  },
+  {
+    "Name": "PK_MWZ Durchf.",
+    "Unit": "",
+    "Id": 110
+  },
+  {
+    "Name": "PK_MWZ Leist.",
+    "Unit": "KW",
+    "Id": 111
+  },
+  {
+    "Name": "PK_SR motor",
+    "Unit": "",
+    "Id": 112
+  },
+  {
+    "Name": "PK_SRpos ist",
+    "Unit": "",
+    "Id": 113
+  },
+  {
+    "Name": "PK_SR mode",
+    "Unit": "",
+    "Id": 114
+  },
+  {
+    "Name": "PK_UsePos",
+    "Unit": "",
+    "Id": 115
+  },
+  {
+    "Name": "PK_UseMotSoll",
+    "Unit": "mm",
+    "Id": 116
+  },
+  {
+    "Name": "PK_UseMotIst",
+    "Unit": "mm",
+    "Id": 117
+  },
+  {
+    "Name": "PK_Einschubschn. BSZ",
+    "Unit": "",
+    "Id": 118
+  },
+  {
+    "Name": "PK_Verbrauchszähler",
+    "Unit": "kg",
+    "Id": 119
+  },
+  {
+    "Name": "PK_LZ LB seit Ent.",
+    "Unit": "Min",
+    "Id": 120
+  },
+  {
+    "Name": "PK_LZ ES seit Füll.",
+    "Unit": "Min",
+    "Id": 121
+  },
+  {
+    "Name": "PK_Anzahl Entasch.",
+    "Unit": "",
+    "Id": 122
+  },
+  {
+    "Name": "PK_Anzahl SR Beweg.",
+    "Unit": "",
+    "Id": 123
+  },
+  {
+    "Name": "PK_Lagerstand",
+    "Unit": "kg",
+    "Id": 124
+  },
+  {
+    "Name": "PK_Leistung",
+    "Unit": "%",
+    "Id": 125
+  },
+  {
+    "Name": "PK_I_Lambda",
+    "Unit": "mA",
+    "Id": 126
+  },
+  {
+    "Name": "PK_U_lambda_soll",
+    "Unit": "mV",
+    "Id": 127
+  },
+  {
+    "Name": "PK_Zustand",
+    "Unit": "",
+    "Id": 128
+  },
+  {
+    "Name": "FW-Anforderung",
+    "Unit": "",
+    "Id": 129
+  },
+  {
+    "Name": "Verb-Anforderung",
+    "Unit": "",
+    "Id": 130
+  },
+  {
+    "Name": "BSZ_ST_Steuerung",
+    "Unit": "h",
+    "Id": 131
+  },
+  {
+    "Name": "BSZ_ST_Heizung",
+    "Unit": "h",
+    "Id": 132
+  },
+  {
+    "Name": "BSZ_ST_Volllast",
+    "Unit": "h",
+    "Id": 133
+  },
+  {
+    "Name": "BSZ_ST_Teillast",
+    "Unit": "h",
+    "Id": 134
+  },
+  {
+    "Name": "BSZ_ST_Zündung",
+    "Unit": "h",
+    "Id": 135
+  },
+  {
+    "Name": "BSZ_ST_Saugzug",
+    "Unit": "h",
+    "Id": 136
+  },
+  {
+    "Name": "BSZ_PK_Heizung",
+    "Unit": "h",
+    "Id": 137
+  },
+  {
+    "Name": "BSZ_PK_Zündung",
+    "Unit": "h",
+    "Id": 138
+  },
+  {
+    "Name": "BSZ_PK_Saugzug",
+    "Unit": "h",
+    "Id": 139
+  },
+  {
+    "Name": "BSZ_PK_Austragung",
+    "Unit": "h",
+    "Id": 140
+  },
+  {
+    "Name": "HKZustand_A",
+    "Unit": "",
+    "Id": 141
+  },
+  {
+    "Name": "HKZustand_1",
+    "Unit": "",
+    "Id": 142
+  },
+  {
+    "Name": "HKZustand_2",
+    "Unit": "",
+    "Id": 143
+  },
+  {
+    "Name": "HKZustand_3",
+    "Unit": "",
+    "Id": 144
+  },
+  {
+    "Name": "HKZustand_4",
+    "Unit": "",
+    "Id": 145
+  },
+  {
+    "Name": "HKZustand_5",
+    "Unit": "",
+    "Id": 146
+  },
+  {
+    "Name": "HKZustand_6",
+    "Unit": "",
+    "Id": 147
+  },
+  {
+    "Name": "BoiZustand_A",
+    "Unit": "",
+    "Id": 148
+  },
+  {
+    "Name": "BoiZustand_1",
+    "Unit": "",
+    "Id": 149
+  },
+  {
+    "Name": "BoiZustand_2",
+    "Unit": "",
+    "Id": 150
+  },
+  {
+    "Name": "BoiZustand_3",
+    "Unit": "",
+    "Id": 151
+  },
+  {
+    "Name": "TVG",
+    "Unit": "°C",
+    "Id": 152
+  },
+  {
+    "Name": "PK_UseSoll",
+    "Unit": "mm",
+    "Id": 153
+  },
+  {
+    "Name": "PK_UseIst",
+    "Unit": "mm",
+    "Id": 154
+  },
+  {
+    "Name": "PK_UseStrom",
+    "Unit": "mA",
+    "Id": 155
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 1,
+        "Name": "HKP1"
+      },
+      {
+        "Bit": 2,
+        "Name": "HKP2"
+      },
+      {
+        "Bit": 3,
+        "Name": "M1A"
+      },
+      {
+        "Bit": 4,
+        "Name": "M1Z"
+      },
+      {
+        "Bit": 5,
+        "Name": "M2A"
+      },
+      {
+        "Bit": 6,
+        "Name": "M2Z"
+      },
+      {
+        "Bit": 7,
+        "Name": "Boilanf.1"
+      },
+      {
+        "Bit": 8,
+        "Name": "Lamdaheiz."
+      },
+      {
+        "Bit": 10,
+        "Name": "Zündheiz."
+      },
+      {
+        "Bit": 11,
+        "Name": "SLK_auf"
+      },
+      {
+        "Bit": 12,
+        "Name": "SLK_zu"
+      },
+      {
+        "Bit": 13,
+        "Name": "PLK_auf"
+      },
+      {
+        "Bit": 14,
+        "Name": "PLK_zu"
+      }
+    ],
+    "Id": 156
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "STB"
+      },
+      {
+        "Bit": 1,
+        "Name": "TKS"
+      },
+      {
+        "Bit": 2,
+        "Name": "Störung"
+      }
+    ],
+    "Id": 157
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "BP1"
+      },
+      {
+        "Bit": 1,
+        "Name": "BP2"
+      },
+      {
+        "Bit": 2,
+        "Name": "BP3"
+      },
+      {
+        "Bit": 3,
+        "Name": "RLm_auf"
+      },
+      {
+        "Bit": 4,
+        "Name": "RLm_zu"
+      },
+      {
+        "Bit": 5,
+        "Name": "Schnellladev."
+      }
+    ],
+    "Id": 158
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "HKP3"
+      },
+      {
+        "Bit": 1,
+        "Name": "HKP4"
+      },
+      {
+        "Bit": 3,
+        "Name": "M3A"
+      },
+      {
+        "Bit": 4,
+        "Name": "M3Z"
+      },
+      {
+        "Bit": 5,
+        "Name": "M4A"
+      },
+      {
+        "Bit": 6,
+        "Name": "M4Z"
+      },
+      {
+        "Bit": 7,
+        "Name": "Boilanf.2"
+      },
+      {
+        "Bit": 8,
+        "Name": "ZP Boi.1"
+      },
+      {
+        "Bit": 9,
+        "Name": "ZP Boi.2"
+      },
+      {
+        "Bit": 10,
+        "Name": "ZP Boi.3"
+      }
+    ],
+    "Id": 159
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "HKP5"
+      },
+      {
+        "Bit": 1,
+        "Name": "HKP6"
+      },
+      {
+        "Bit": 3,
+        "Name": "M5A"
+      },
+      {
+        "Bit": 4,
+        "Name": "M5Z"
+      },
+      {
+        "Bit": 5,
+        "Name": "M6A"
+      },
+      {
+        "Bit": 6,
+        "Name": "M6Z"
+      },
+      {
+        "Bit": 7,
+        "Name": "Boilanf.3"
+      },
+      {
+        "Bit": 11,
+        "Name": "FW Freig."
+      },
+      {
+        "Bit": 12,
+        "Name": "FW Pumpe"
+      },
+      {
+        "Bit": 13,
+        "Name": "FLP"
+      }
+    ],
+    "Id": 160
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "HKPA"
+      },
+      {
+        "Bit": 1,
+        "Name": "MAA"
+      },
+      {
+        "Bit": 2,
+        "Name": "MAZ"
+      },
+      {
+        "Bit": 3,
+        "Name": "BPA"
+      },
+      {
+        "Bit": 4,
+        "Name": "ZP Boi.A"
+      },
+      {
+        "Bit": 5,
+        "Name": "Boilanf.A"
+      }
+    ],
+    "Id": 161
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "PK_L Heiz."
+      },
+      {
+        "Bit": 1,
+        "Name": "PK_Z Heiz."
+      },
+      {
+        "Bit": 2,
+        "Name": "PK_Z Geb."
+      },
+      {
+        "Bit": 5,
+        "Name": "PK_ES Run"
+      },
+      {
+        "Bit": 6,
+        "Name": "PK_ES Dir"
+      },
+      {
+        "Bit": 7,
+        "Name": "PK_AS Saug"
+      },
+      {
+        "Bit": 8,
+        "Name": "PK_AS RA Run"
+      },
+      {
+        "Bit": 9,
+        "Name": "PK_AS RA Dir"
+      },
+      {
+        "Bit": 10,
+        "Name": "PK_Rein En"
+      },
+      {
+        "Bit": 11,
+        "Name": "PK_Rein Run"
+      },
+      {
+        "Bit": 12,
+        "Name": "PK_RLm_auf"
+      },
+      {
+        "Bit": 13,
+        "Name": "PK_RLm_zu"
+      },
+      {
+        "Bit": 14,
+        "Name": "PK_RL Pumpe"
+      }
+    ],
+    "Id": 162
+  },
+  {
+    "Bits": [
+      {
+        "Bit": 0,
+        "Name": "gFlP"
+      },
+      {
+        "Bit": 1,
+        "Name": "gFlM auf"
+      },
+      {
+        "Bit": 2,
+        "Name": "gFlM zu"
+      }
+    ],
+    "Id": 163
+  }
+]

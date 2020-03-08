@@ -1,21 +1,9 @@
 [
   {
-    "Id": 0,
-    "Name": "TK",
-    "Unit": "°C",
-    "Value": 3
-  },
-  {
-    "Id": 1,
-    "Name": "TRG",
-    "Unit": "°C",
-    "Value": 190.9
-  },
-  {
     "Id": 2,
     "Name": "O2",
     "Unit": "%",
-    "Value": 6
+    "Value": 6.0
   },
   {
     "Id": 3,
@@ -51,37 +39,37 @@
     "Id": 8,
     "Name": "TVL_2",
     "Unit": "°C",
-    "Value": 120
+    "Value": 120.0
   },
   {
     "Id": 9,
     "Name": "TR1",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 10,
     "Name": "TR2",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 11,
     "Name": "TB1",
     "Unit": "°C",
-    "Value": 64
+    "Value": 64.0
   },
   {
     "Id": 12,
     "Name": "TVLs_1",
     "Unit": "°C",
-    "Value": 53
+    "Value": 53.0
   },
   {
     "Id": 13,
     "Name": "TVLs_2",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 14,
@@ -93,31 +81,31 @@
     "Id": 15,
     "Name": "TRs_2",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 16,
     "Name": "Prim.ist",
     "Unit": "%",
-    "Value": 15
+    "Value": 15.0
   },
   {
     "Id": 17,
     "Name": "Prim.soll",
     "Unit": "%",
-    "Value": 14
+    "Value": 14.0
   },
   {
     "Id": 18,
     "Name": "Sek.ist",
     "Unit": "%",
-    "Value": 14
+    "Value": 14.0
   },
   {
     "Id": 19,
     "Name": "Sek.soll",
     "Unit": "%",
-    "Value": 14
+    "Value": 14.0
   },
   {
     "Id": 20,
@@ -129,157 +117,157 @@
     "Id": 21,
     "Name": "RLP",
     "Unit": "%",
-    "Value": 100
+    "Value": 100.0
   },
   {
     "Id": 22,
     "Name": "ZK",
     "Unit": "",
-    "Value": 6
+    "Value": 6.0
   },
   {
     "Id": 23,
     "Name": "O2_soll",
     "Unit": "%",
-    "Value": 6
+    "Value": 6.0
   },
   {
     "Id": 24,
     "Name": "U_Lambda",
     "Unit": "mV",
-    "Value": 21
+    "Value": 21.0
   },
   {
     "Id": 25,
     "Name": "TRG_soll",
     "Unit": "°C",
-    "Value": 190
+    "Value": 190.0
   },
   {
     "Id": 26,
     "Name": "TRG_max",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 27,
     "Name": "TKsoll",
     "Unit": "°C",
-    "Value": 79
+    "Value": 79.0
   },
   {
     "Id": 28,
     "Name": "TVL_3",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 29,
     "Name": "TVL_4",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 30,
     "Name": "TR3",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 31,
     "Name": "TR4",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 32,
     "Name": "TB2",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 33,
     "Name": "TVLs_3",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 34,
     "Name": "TVLs_4",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 35,
     "Name": "TRs_3",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 36,
     "Name": "TRs_4",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 37,
     "Name": "TVL_5",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 38,
     "Name": "TVL_6",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 39,
     "Name": "TR5",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 40,
     "Name": "TR6",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 41,
     "Name": "TB3",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 42,
     "Name": "TVLs_5",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 43,
     "Name": "TVLs_6",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 44,
     "Name": "TRs_5",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 45,
     "Name": "TRs_6",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 46,
     "Name": "SZist",
     "Unit": "%",
-    "Value": 70
+    "Value": 70.0
   },
   {
     "Id": 47,
@@ -297,61 +285,61 @@
     "Id": 49,
     "Name": "PufLad",
     "Unit": "%",
-    "Value": 73
+    "Value": 73.0
   },
   {
     "Id": 50,
     "Name": "null0",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 51,
     "Name": "null1",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 52,
     "Name": "null2",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 53,
     "Name": "MWZ Vorl.",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 54,
     "Name": "MWZ Rueckl.",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 55,
     "Name": "MWZ Durchf.",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 56,
     "Name": "MWZ Leist.",
     "Unit": "KW",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 57,
     "Name": "TFW",
     "Unit": "°C",
-    "Value": 121
+    "Value": 121.0
   },
   {
     "Id": 58,
     "Name": "TRLsoll",
     "Unit": "°C",
-    "Value": 60
+    "Value": 60.0
   },
   {
     "Id": 59,
@@ -363,169 +351,169 @@
     "Id": 60,
     "Name": "VFS Flow",
     "Unit": "l/min",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 61,
     "Name": "VFS Temp",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 62,
     "Name": "IO32 VL",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 63,
     "Name": "IO32 521",
     "Unit": "Pa",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 64,
     "Name": "IO32 522",
     "Unit": "Pa",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 65,
     "Name": "IO32 509",
     "Unit": "Pa",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 66,
     "Name": "IO32 510",
     "Unit": "Pa",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 67,
     "Name": "TBA",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 68,
     "Name": "TVLs_A",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 69,
     "Name": "TRs_A",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 70,
     "Name": "TRA",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 71,
     "Name": "TVL_A",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 72,
     "Name": "FRA Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 73,
     "Name": "FR1 Zustand",
     "Unit": "",
-    "Value": 3
+    "Value": 3.0
   },
   {
     "Id": 74,
     "Name": "FR2 Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 75,
     "Name": "FR3 Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 76,
     "Name": "FR4 Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 77,
     "Name": "FR5 Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 78,
     "Name": "FR6 Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 79,
     "Name": "TRA_A",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 80,
     "Name": "TRA_1",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 81,
     "Name": "TRA_2",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 82,
     "Name": "TRA_3",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 83,
     "Name": "TRA_4",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 84,
     "Name": "TRA_5",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 85,
     "Name": "TRA_6",
     "Unit": "°C",
-    "Value": 20
+    "Value": 20.0
   },
   {
     "Id": 86,
     "Name": "PK_TK",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 87,
     "Name": "PK_ZK",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 88,
@@ -537,253 +525,253 @@
     "Id": 89,
     "Name": "PK_O2soll",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 90,
     "Name": "DUMMY_1",
     "Unit": " ",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 91,
     "Name": "PK_TKsoll",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 92,
     "Name": "PK_TRG",
     "Unit": "°C",
-    "Value": 2
+    "Value": 2.0
   },
   {
     "Id": 93,
     "Name": "PK_TRL",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 94,
     "Name": "PK_TRLsoll",
     "Unit": "°C",
-    "Value": 60
+    "Value": 60.0
   },
   {
     "Id": 95,
     "Name": "PK_RLP",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 96,
     "Name": "PK_Tplat",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 97,
     "Name": "PK_SZs",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 98,
     "Name": "PK_SZ",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 99,
     "Name": "PK_KeBrstScale",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 100,
     "Name": "PK_ESRegler",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 101,
     "Name": "PK_ESsoll",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 102,
     "Name": "PK_I Es",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 103,
     "Name": "PK_I Ra",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 104,
     "Name": "PK_I Aa",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 105,
     "Name": "PK_I Sr",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 106,
     "Name": "PK_I Rein",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 107,
     "Name": "PK_U_Lambda",
     "Unit": "mV",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 108,
     "Name": "PK_MWZ Vorl.",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 109,
     "Name": "PK_MWZ Rueckl.",
     "Unit": "°C",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 110,
     "Name": "PK_MWZ Durchf.",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 111,
     "Name": "PK_MWZ Leist.",
     "Unit": "KW",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 112,
     "Name": "PK_SR motor",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 113,
     "Name": "PK_SRpos ist",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 114,
     "Name": "PK_SR mode",
     "Unit": "",
-    "Value": 4
+    "Value": 4.0
   },
   {
     "Id": 115,
     "Name": "PK_UsePos",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 116,
     "Name": "PK_UseMotSoll",
     "Unit": "mm",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 117,
     "Name": "PK_UseMotIst",
     "Unit": "mm",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 118,
     "Name": "PK_Einschubschn. BSZ",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 119,
     "Name": "PK_Verbrauchszähler",
     "Unit": "kg",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 120,
     "Name": "PK_LZ LB seit Ent.",
     "Unit": "Min",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 121,
     "Name": "PK_LZ ES seit Füll.",
     "Unit": "Min",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 122,
     "Name": "PK_Anzahl Entasch.",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 123,
     "Name": "PK_Anzahl SR Beweg.",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 124,
     "Name": "PK_Lagerstand",
     "Unit": "kg",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 125,
     "Name": "PK_Leistung",
     "Unit": "%",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 126,
     "Name": "PK_I_Lambda",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 127,
     "Name": "PK_U_lambda_soll",
     "Unit": "mV",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 128,
     "Name": "PK_Zustand",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 129,
     "Name": "FW-Anforderung",
     "Unit": "",
-    "Value": 53
+    "Value": 53.0
   },
   {
     "Id": 130,
     "Name": "Verb-Anforderung",
     "Unit": "",
-    "Value": 53
+    "Value": 53.0
   },
   {
     "Id": 131,
@@ -825,498 +813,498 @@
     "Id": 137,
     "Name": "BSZ_PK_Heizung",
     "Unit": "h",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 138,
     "Name": "BSZ_PK_Zündung",
     "Unit": "h",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 139,
     "Name": "BSZ_PK_Saugzug",
     "Unit": "h",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 140,
     "Name": "BSZ_PK_Austragung",
     "Unit": "h",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 141,
     "Name": "HKZustand_A",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 142,
     "Name": "HKZustand_1",
     "Unit": "",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 143,
     "Name": "HKZustand_2",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 144,
     "Name": "HKZustand_3",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 145,
     "Name": "HKZustand_4",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 146,
     "Name": "HKZustand_5",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 147,
     "Name": "HKZustand_6",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 148,
     "Name": "BoiZustand_A",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 149,
     "Name": "BoiZustand_1",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 150,
     "Name": "BoiZustand_2",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 151,
     "Name": "BoiZustand_3",
     "Unit": "",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 152,
     "Name": "TVG",
     "Unit": "°C",
-    "Value": -20
+    "Value": -20.0
   },
   {
     "Id": 153,
     "Name": "PK_UseSoll",
     "Unit": "mm",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 154,
     "Name": "PK_UseIst",
     "Unit": "mm",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 155,
     "Name": "PK_UseStrom",
     "Unit": "mA",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 156,
     "Name": "HKP1",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "HKP2",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 156,
     "Name": "M1A",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 156,
     "Name": "M1Z",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "M2A",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "M2Z",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "Boilanf.1",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 156,
     "Name": "Lamdaheiz.",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 156,
     "Name": "Zündheiz.",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
     "Id": 156,
     "Name": "SLK_auf",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "SLK_zu",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "PLK_auf",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
     "Id": 156,
     "Name": "PLK_zu",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 158,
+    "Id": 157,
     "Name": "STB",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 158,
+    "Id": 157,
     "Name": "TKS",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
+  },
+  {
+    "Id": 157,
+    "Name": "Störung",
+    "Unit": "bool",
+    "Value": 1.0
   },
   {
     "Id": 158,
-    "Name": "Störung",
-    "Unit": "bool",
-    "Value": 1
-  },
-  {
-    "Id": 160,
     "Name": "BP1",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 160,
+    "Id": 158,
     "Name": "BP2",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 160,
+    "Id": 158,
     "Name": "BP3",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 160,
+    "Id": 158,
     "Name": "RLm_auf",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 160,
+    "Id": 158,
     "Name": "RLm_zu",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
+  },
+  {
+    "Id": 158,
+    "Name": "Schnellladev.",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 159,
+    "Name": "HKP3",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 159,
+    "Name": "HKP4",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 159,
+    "Name": "M3A",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 159,
+    "Name": "M3Z",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 159,
+    "Name": "M4A",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 159,
+    "Name": "M4Z",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 159,
+    "Name": "Boilanf.2",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 159,
+    "Name": "ZP Boi.1",
+    "Unit": "bool",
+    "Value": 0.0
+  },
+  {
+    "Id": 159,
+    "Name": "ZP Boi.2",
+    "Unit": "bool",
+    "Value": 1.0
+  },
+  {
+    "Id": 159,
+    "Name": "ZP Boi.3",
+    "Unit": "bool",
+    "Value": 0.0
   },
   {
     "Id": 160,
-    "Name": "Schnellladev.",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 162,
-    "Name": "HKP3",
-    "Unit": "bool",
-    "Value": 1
-  },
-  {
-    "Id": 162,
-    "Name": "HKP4",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 162,
-    "Name": "M3A",
-    "Unit": "bool",
-    "Value": 1
-  },
-  {
-    "Id": 162,
-    "Name": "M3Z",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 162,
-    "Name": "M4A",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 162,
-    "Name": "M4Z",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 162,
-    "Name": "Boilanf.2",
-    "Unit": "bool",
-    "Value": 1
-  },
-  {
-    "Id": 162,
-    "Name": "ZP Boi.1",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 162,
-    "Name": "ZP Boi.2",
-    "Unit": "bool",
-    "Value": 1
-  },
-  {
-    "Id": 162,
-    "Name": "ZP Boi.3",
-    "Unit": "bool",
-    "Value": 0
-  },
-  {
-    "Id": 164,
     "Name": "HKP5",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "HKP6",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "M5A",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "M5Z",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "M6A",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "M6Z",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "Boilanf.3",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "FW Freig.",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "FW Pumpe",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 164,
+    "Id": 160,
     "Name": "FLP",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 166,
+    "Id": 161,
     "Name": "HKPA",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 166,
+    "Id": 161,
     "Name": "MAA",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 166,
+    "Id": 161,
     "Name": "MAZ",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 166,
+    "Id": 161,
     "Name": "BPA",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 166,
+    "Id": 161,
     "Name": "ZP Boi.A",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 166,
+    "Id": 161,
     "Name": "Boilanf.A",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_L Heiz.",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_Z Heiz.",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_Z Geb.",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_ES Run",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_ES Dir",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_AS Saug",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_AS RA Run",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_AS RA Dir",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_Rein En",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_Rein Run",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_RLm_auf",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_RLm_zu",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 168,
+    "Id": 162,
     "Name": "PK_RL Pumpe",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   },
   {
-    "Id": 170,
+    "Id": 163,
     "Name": "gFlP",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 170,
+    "Id": 163,
     "Name": "gFlM auf",
     "Unit": "bool",
-    "Value": 1
+    "Value": 1.0
   },
   {
-    "Id": 170,
+    "Id": 163,
     "Name": "gFlM zu",
     "Unit": "bool",
-    "Value": 0
+    "Value": 0.0
   }
 ]
