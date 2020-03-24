@@ -15,7 +15,8 @@ namespace HeaterListener
 {
     class Program
     {
-        private static UdpClient UdpClient = new UdpClient();
+        private static TcpClient TcpClient = new TcpClient();
+        private static NetworkStream Stream;
         private static ConfigModel Config;
         private static List<NetworkPacketModel> NetworkPacketConfig;
         private const string CONFIG_FILE_NAME = "config.json";
@@ -75,7 +76,8 @@ namespace HeaterListener
             // try to register for the port
             try
             {
-                UdpClient = new UdpClient(Config.Port);
+                TcpClient = new TcpClient(Config.IpAddress, Config.Port);
+                Stream = TcpClient.GetStream();
             }
             catch (Exception e)
             {
@@ -89,13 +91,13 @@ namespace HeaterListener
             Task.Run(() =>
             {
                 string previousInput = "";
-                var sender = new IPEndPoint(ip, Config.Port);
                 while (true)
                 {
                     try
                     {
-                        var bytes = UdpClient.Receive(ref sender);
-                        string message = Encoding.UTF8.GetString(bytes);
+                        var data = new Byte[256];
+                        var bytes = Stream.Read(data, 0, data.Length);
+                        var message = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
 
                         if (message != previousInput)
                         {
@@ -184,6 +186,7 @@ namespace HeaterListener
             else Console.WriteLine("Ungültiges Paket empfangen: " + input);
         }
 
+        // probably doesnt work anymore
         private static void SendTestPackets(int port)
         {
             var localIp = GetLocalIPAddress();
