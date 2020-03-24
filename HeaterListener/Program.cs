@@ -10,13 +10,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using HeaterListener.Models;
+using System.Globalization;
 
 namespace HeaterListener
 {
     class Program
     {
         private static TcpClient TcpClient = new TcpClient();
-        private static NetworkStream Stream;
+        private static StreamReader StreamReader;
         private static ConfigModel Config;
         private static List<NetworkPacketModel> NetworkPacketConfig;
         private const string CONFIG_FILE_NAME = "config.json";
@@ -77,7 +78,7 @@ namespace HeaterListener
             try
             {
                 TcpClient = new TcpClient(Config.IpAddress, Config.Port);
-                Stream = TcpClient.GetStream();
+                StreamReader = new StreamReader(TcpClient.GetStream()); ;
             }
             catch (Exception e)
             {
@@ -90,23 +91,24 @@ namespace HeaterListener
             Console.WriteLine("Paket-Empfang gestartet...");
             Task.Run(() =>
             {
-                string previousInput = "";
+                var previousInput = "";
                 while (true)
                 {
                     try
                     {
-                        var data = new Byte[256];
-                        var bytes = Stream.Read(data, 0, data.Length);
-                        var message = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                        var message = StreamReader.ReadLine();
 
                         if (message != previousInput)
                         {
                             previousInput = message;
-                            ProcessData(message);
-                            Console.WriteLine("\nProcessed: \n" + message);
+                            if (ProcessData(message))
+                                Console.WriteLine("\nVerarbeitet: \n" + message);
+                            else previousInput = "";
                         }
-                        else
-                            Console.WriteLine("\nReceived: \n" + message);
+                        // else
+                        // {
+                        //     Console.WriteLine("\nNur Empfangen (keine Veränderung der Daten): \n" + message);
+                        // }
                     }
                     catch (Exception e)
                     {
@@ -128,7 +130,7 @@ namespace HeaterListener
             }
         }
 
-        private static void ProcessData(string input)
+        private static bool ProcessData(string input)
         {
             if (input.StartsWith("pm "))
             {
@@ -149,11 +151,11 @@ namespace HeaterListener
                             var c = new CapturedDataModel() { Id = i, Name = analog.Name, Unit = analog.Unit };
                             double v;
                             if (double.TryParse(split[i].Replace(".", ","), out v))
-                                c.Value = v;
+                                c.Value = v.ToString();
                             else
                             {
-                                Console.WriteLine("Paket ungültig. Double erwartet jedoch anderen Wert empfangen: " + input);
-                                ConsoleHelper.ExitDialog();
+                                Console.WriteLine("\nPaket ungültig. Double erwartet jedoch anderen Wert empfangen:\ntryparse: " + split[i] + "\n" + input);
+                                return false;
                             }
                             data.Add(c);
                         }
@@ -162,28 +164,36 @@ namespace HeaterListener
                             var digital = filtered.First() as DigitalNetworkPacketModel;
 
                             // go through bits
-                            short o;
-                            if (short.TryParse(split[i], out o))
+                            int o;
+                            if (int.TryParse(split[i], NumberStyles.HexNumber, null, out o))
                             {
                                 int[] bits = Convert.ToString(o, 2).PadLeft(digital.Bits.Last().Bit + 1, '0')
                                              .Select(c => int.Parse(c.ToString()))
                                              .ToArray();
 
                                 for (int b = 0; b < digital.Bits.Count; b++)
-                                    data.Add(new CapturedDataModel() { Id = i, Value = bits[digital.Bits[b].Bit], Name = digital.Bits[b].Name, Unit = "bool" });
+                                    data.Add(new CapturedDataModel() { Id = i, Value = bits[digital.Bits[b].Bit].ToString(), Name = digital.Bits[b].Name, Unit = "bool" });
                             }
                             else
                             {
-                                Console.WriteLine("Paket ungültig. Short erwartet jedoch anderen Wert empfangen: " + input);
-                                ConsoleHelper.ExitDialog();
+                                Console.WriteLine("\nPaket ungültig. Hexadezimalnummer erwartet jedoch anderen Wert empfangen:\ntryparse: " + split[i] + "\n" + input);
+                                return false;
                             }
                         }
                     }
                 }
 
+                // add timestamp
+                data.Add(new CapturedDataModel() { Id = -1, Name = "timestamp", Unit = "", Value = DateTime.Now.ToString() });
+
                 File.WriteAllText(DATA_FILE_NAME, JsonConvert.SerializeObject(data, Formatting.Indented));
+                return true;
             }
-            else Console.WriteLine("Ungültiges Paket empfangen: " + input);
+            else
+            {
+                Console.WriteLine("\nUngültiges Paket empfangen:\nPaket fängt nicht mit 'pm ' an\n" + input);
+                return false;
+            }
         }
 
         // probably doesnt work anymore
