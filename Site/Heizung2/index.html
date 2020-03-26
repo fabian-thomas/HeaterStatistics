@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		div {
+			display: grid;
+			grid-template-columns: 200px;
+		}
+
+		label {
+			grid-column: 1 / 2;
+		}
+
+		.value_label {
+			grid-column: 2 / 3;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="display: flex;justify-content: space-between;">
+		<h1>Heizung</h1>
+		<label id="timestamp-label"></label>
+	</div>
+	<div id="main_div"></div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
