@@ -13,9 +13,9 @@ request.addEventListener("load", function(event) {
 		data = JSON.parse(request.responseText);
 		console.log(data);
 
-		let tpo;
-		let tvls = [];
-		let tb;
+		let TPo;
+		let TVLs_1;
+		let TB1;
 		for (let entry of data) {
 			if (entry.Name !== "timestamp") {
 				if (entry.Name == "TPo" || entry.Name == "TVLs_1" || entry.Name == "TB1") {
@@ -28,12 +28,12 @@ request.addEventListener("load", function(event) {
 					valueLabel.classList.add("value_label");
 					main_div.appendChild(label);
 					main_div.appendChild(valueLabel);
-				}
 
-				// values (TVLs, Tpo, TB) als integer in den oben deklrarierten Variablen abspeichern
-				if (entry.Name == "TPo") tpo = parseInt(entry.Value);
-				else if (entry.Name == "TB1") tb = parseInt(entry.Value);
-				else if (entry.Name.startsWith("TVLs_")) tvls.push(parseInt(entry.Value)); // tvls 1-8 als Array abspeichern; Vorsicht: array beginnt bei 0 -> tvls[0] == TVLs_1
+					// values (TVLs, Tpo, TB) als integer in den oben deklrarierten Variablen abspeichern
+					if (entry.Name == "TPo") TPo = parseInt(entry.Value);
+					else if (entry.Name == "TB1") TB1 = parseInt(entry.Value);
+					else if (entry.Name == "TVLs_1") TVLs_1 = parseInt(entry.Value);
+				}
 			} else {
 				document.getElementById("timestamp-label").innerHTML = entry.Value;
 				// Überprüfen ob die Daten älter als 2 Minuten sind
@@ -42,24 +42,16 @@ request.addEventListener("load", function(event) {
 			}
 		}
 
-		console.log("tpo", tpo, "tb", tb, "tvls", tvls);
+		console.log("TPo", TPo, "TB1", TB1, "TVLs_1", TVLs_1);
 
 		// Farbregeln mit den abgespeicherten Werten überprüfen
-		if ((45 < tb && 40 > tb) != (tvls[0] > tpo && tvls[1] > tpo && tvls[2] > tpo && tvls[3] > tpo))
+		if (TB1 > 45 && TVLs_1 - 4 <= TPo) document.body.style.backgroundColor = "green";
+
+		if ((45 < TB1 && 40 > TB1) != TVLs_1 - 4 > TPo)
 			// != dient in diesem Fall als XOR
 			document.body.style.backgroundColor = "yellow";
 
-		if (
-			tb < 40 ||
-			(tvls[0] > tpo &&
-				tvls[1] > tpo &&
-				tvls[2] > tpo &&
-				tvls[3] > tpo &&
-				tvls[4] > tpo &&
-				tvls[5] > tpo &&
-				tvls[6] > tpo) ||
-			(45 < tb && 40 > tb && tvls[0] > tpo && tvls[1] > tpo && tvls[2] > tpo && tvls[3] > tpo)
-		)
+		if (TB1 < 40 || TVLs_1 - 8 > TPo || (45 < TB1 && 40 > TB1 && TVLs_1 - 4 > TPo))
 			document.body.style.backgroundColor = "red";
 	} else {
 		console.error(request.statusText, request.responseText);
